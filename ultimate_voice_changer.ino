@@ -1,3 +1,12 @@
+/**
+ * Ultimate Voice Changer for Arduino
+ *
+ * Requires an external board/shield hosting an MCP3208 ADC and an MCP4921 DAC.
+ *
+ * Created by Andy Grove.
+ * http://theotherandygrove.com
+ */
+
 // pin assigments
 const int LED = 6;
 const int LDAC = 8;
