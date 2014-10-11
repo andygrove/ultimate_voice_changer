@@ -10,12 +10,14 @@ const int DATAIN = 12;
 // SPI command for DAC
 const int cmd = 0x7000;
 
+const long n = 100;
+
 int fword;
 int data;
 int counter = 0;
 long last_time = 0;
 
-#define NUM_SINE_WAVE_POINTS 512
+#define NUM_SINE_WAVE_POINTS 256
 
 byte sineWave[NUM_SINE_WAVE_POINTS];  
 
@@ -40,7 +42,7 @@ void setup() {
 
 int index = 0;
 
-void cycle_clock() {
+inline void cycle_clock() {
   PORTB |= B00100000;
   //digitalWrite(SPICLOCK,HIGH);
   //delayMicroseconds(10);
@@ -81,8 +83,8 @@ int read_adc(int channel){
 
   //read bits from adc
   for (int i=11; i>=0; i--){
-    //adcvalue += (PINB & B00010000) << i;
-    adcvalue += digitalRead(DATAIN)<<i;
+    adcvalue += ((PINB & B00010000) >> 4) << i;
+    //adcvalue += digitalRead(DATAIN)<<i;
     cycle_clock();
   }
 
@@ -116,7 +118,7 @@ fword = cmd | data;
 
     cycle_clock();
 
-    fword = fword << 1;
+      fword = fword << 1;
   }
 
   // end of conversion
@@ -130,20 +132,28 @@ fword = cmd | data;
 bool led_on = false;
 
 void loop() {
+
+  // get next point in sine wave table
   if (++index == NUM_SINE_WAVE_POINTS)  {
     index = 0;
   }
-  data = sineWave[index] * 5;
+  data = sineWave[index];
 
+  // sample audio input
   int audio_in = read_adc(1);
 
-  //TODO: apply modifications to audio
+  // mix audio with sine wave
+  //audio_in = audio_in * ((data-127) / 127.0);
+
+  // clip the signal
+  if (audio_in<0) audio_in = 0;
+  else if (audio_in>4095) audio_in = 4095;
   
+  // write output
   write_dac(audio_in);
 
   // blink the LED after every n samples (it just wouldn't be 
   // an arduino sketch without a blinking LED)
-  long n = 1000;
   if (++counter==n) {
     led_on = !led_on;
     if (led_on) {
