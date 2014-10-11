@@ -10,7 +10,7 @@ const int DATAIN = 12;
 // SPI command for DAC
 const int cmd = 0x7000;
 
-const long n = 100;
+const long n = 10000;
 
 int fword;
 int data;
@@ -22,6 +22,8 @@ long last_time = 0;
 byte sineWave[NUM_SINE_WAVE_POINTS];  
 
 void setup() {
+
+  // use regular arduino code here since this only runs once
 
   // set pin directions
   pinMode(LDAC, OUTPUT);
@@ -143,7 +145,7 @@ void loop() {
   int audio_in = read_adc(1);
 
   // mix audio with sine wave
-  //audio_in = audio_in * ((data-127) / 127.0);
+  audio_in = (audio_in-2047) * ((data-127) / 127.0);
 
   // clip the signal
   if (audio_in<0) audio_in = 0;
