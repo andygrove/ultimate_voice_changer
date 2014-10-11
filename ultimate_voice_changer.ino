@@ -109,8 +109,10 @@ void loop() {
     index = 0;
   }
   data = sineWave[index] * 5;
+
+  int audio_in = read_adc(1);
   
-  write_dac(data);
+  write_dac(audio_in);
 
 //  delay(10);
 }
