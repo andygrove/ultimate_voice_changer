@@ -59,7 +59,10 @@ int read_adc(int channel){
   //allow channel selection
   commandbits|=((channel-1)<<3);
 
-  digitalWrite(CS_ADC,LOW); //Select adc
+  // select ADC
+  PORTB &= B11111011;
+  //digitalWrite(CS_ADC,LOW);
+
   // setup bits to be written
   for (int i=7; i>=3; i--){
     if (commandbits&1<<i) {
@@ -82,13 +85,10 @@ int read_adc(int channel){
     adcvalue += digitalRead(DATAIN)<<i;
     cycle_clock();
   }
-  digitalWrite(CS_ADC, HIGH); //turn off device
 
-  // reset DATAOUT .. not needed but makes debugging easier
-  PORTB &= B11110111;
-  //digitalWrite(DATAOUT, LOW);  
+  PORTB |= B00000100;
+  //digitalWrite(CS_ADC, HIGH); //turn off device
 
-  // clock is LOW
   return adcvalue;
 }
 
@@ -146,7 +146,13 @@ void loop() {
   long n = 1000;
   if (++counter==n) {
     led_on = !led_on;
-    digitalWrite(LED, led_on ? HIGH : LOW);
+    if (led_on) {
+      //PORTD |= B01000000;
+      digitalWrite(LED, HIGH);
+    } else {
+      //PORTD &= B10111111;
+      digitalWrite(LED, LOW);
+    }
     counter = 0;
   }
 }
