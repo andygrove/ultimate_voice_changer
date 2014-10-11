@@ -12,7 +12,6 @@ const int cmd = 0x7000;
 
 int fword;
 int data;
-int tmp;
 int counter = 0;
 long last_time = 0;
 
@@ -41,9 +40,18 @@ void setup() {
 
 int index = 0;
 
+void cycle_clock() {
+  PORTB |= B00100000;
+  //digitalWrite(SPICLOCK,HIGH);
+  //delayMicroseconds(10);
+  PORTB &= B11011111;
+  //digitalWrite(SPICLOCK,LOW);    
+}
+
 int read_adc(int channel){
 
-  digitalWrite(SPICLOCK, LOW);
+  //digitalWrite(SPICLOCK, LOW);
+
   int adcvalue = 0;
 
   byte commandbits = B11000000; //command bits - start, mode, chn (3), dont care (3)
@@ -54,29 +62,31 @@ int read_adc(int channel){
   digitalWrite(CS_ADC,LOW); //Select adc
   // setup bits to be written
   for (int i=7; i>=3; i--){
-    digitalWrite(DATAOUT,commandbits&1<<i);
-    //cycle clock
-    digitalWrite(SPICLOCK,HIGH);
-    digitalWrite(SPICLOCK,LOW);    
+    if (commandbits&1<<i) {
+      PORTB |= B00001000;
+      //digitalWrite(DATAOUT,HIGH);
+    } else {
+      PORTB &= B11110111;
+      //digitalWrite(DATAOUT,LOW);
+    }
+    cycle_clock();
   }
 
-    //cycle clock twice to ignore two null bits
-  digitalWrite(SPICLOCK,HIGH);    
-  digitalWrite(SPICLOCK,LOW);
-  digitalWrite(SPICLOCK,HIGH);  
-  digitalWrite(SPICLOCK,LOW);
+  //cycle clock twice to ignore two null bits
+  cycle_clock();
+  cycle_clock();
 
   //read bits from adc
   for (int i=11; i>=0; i--){
-    adcvalue+=digitalRead(DATAIN)<<i;
-    //cycle clock
-    digitalWrite(SPICLOCK,HIGH);
-    digitalWrite(SPICLOCK,LOW);
+    //adcvalue += (PINB & B00010000) << i;
+    adcvalue += digitalRead(DATAIN)<<i;
+    cycle_clock();
   }
   digitalWrite(CS_ADC, HIGH); //turn off device
 
   // reset DATAOUT .. not needed but makes debugging easier
-  digitalWrite(DATAOUT, LOW);  
+  PORTB &= B11110111;
+  //digitalWrite(DATAOUT, LOW);  
 
   // clock is LOW
   return adcvalue;
@@ -88,25 +98,33 @@ void write_dac(int data) {
 fword = cmd | data;
   
   // chip select
-  digitalWrite(CS_DAC, LOW);
+  PORTB &= B11111101;
+  //digitalWrite(CS_DAC, LOW);
   
   // start writing data
-  digitalWrite(LDAC, HIGH);
+  PORTB |= B00000001;
+  //digitalWrite(LDAC, HIGH);
+
   for (int i1=0; i1<16; i1++) {
-    tmp = fword & 0x8000;
-    digitalWrite(DATAOUT, LOW);
-    if (tmp) {
-      digitalWrite(DATAOUT, HIGH);
+    if (fword & 0x8000) {
+      PORTB |= B00001000;
+      //digitalWrite(DATAOUT, HIGH);
+    } else {
+      PORTB &= B11110111;
+      //digitalWrite(DATAOUT, LOW);
     }
 
-    // cycle clock
-    digitalWrite(SPICLOCK, HIGH);
-    digitalWrite(SPICLOCK, LOW);
+    cycle_clock();
 
     fword = fword << 1;
   }
-  digitalWrite(CS_DAC, HIGH); // end of conversion
-  digitalWrite(LDAC, LOW); // writing data to output buffer
+
+  // end of conversion
+  PORTB |= B00000010;
+  //digitalWrite(CS_DAC, HIGH); 
+  
+  PORTB &= B11111110;
+  //digitalWrite(LDAC, LOW); // writing data to output buffer
 }
 
 bool led_on = false;
