@@ -27,7 +27,9 @@ void setup() {
   // disable both the ADC and DAC
   digitalWrite(CS_ADC, HIGH);
   digitalWrite(CS_DAC, HIGH);
+  digitalWrite(SPICLOCK, LOW);
 
+  // prepare sine wave
   fill_sinewave();
 }
 
@@ -77,41 +79,28 @@ int read_adc(int channel){
 /** Write to DAC */
 void write_dac(int data) {
 
-  // combine command and data bits
-  fword = cmd | data;
+fword = cmd | data;
   
-  digitalWrite(SPICLOCK, LOW);
-
   // chip select
   digitalWrite(CS_DAC, LOW);
   
   // start writing data
   digitalWrite(LDAC, HIGH);
-
-  for (int i1=0; i1<12; i1++) {
+  for (int i1=0; i1<16; i1++) {
     tmp = fword & 0x8000;
-    
-    // write bit
+    digitalWrite(DATAOUT, LOW);
     if (tmp) {
       digitalWrite(DATAOUT, HIGH);
     }
-    else {
-      digitalWrite(DATAOUT, LOW);  
-    }
+
     // cycle clock
     digitalWrite(SPICLOCK, HIGH);
     digitalWrite(SPICLOCK, LOW);
 
-    // shift up one
     fword = fword << 1;
   }
-
   digitalWrite(CS_DAC, HIGH); // end of conversion
-
-  digitalWrite(LDAC, LOW); // writing data to output buffer  
-
-  // reset DATAOUT .. not needed but makes debugging easier
-  digitalWrite(DATAOUT, LOW);  
+  digitalWrite(LDAC, LOW); // writing data to output buffer
 }
 
 
@@ -120,26 +109,8 @@ void loop() {
     index = 0;
   }
   data = sineWave[index] * 5;
-  fword = cmd | data;
   
-  // chip select
-  digitalWrite(CS_DAC, HIGH);
-  digitalWrite(CS_DAC, LOW);
-  
-  // start writing data
-  digitalWrite(LDAC, HIGH);
-  for (int i1=0; i1<16; i1++) {
-    digitalWrite(SPICLOCK, LOW);
-    tmp = fword & 0x8000;
-    digitalWrite(DATAOUT, LOW);
-    if (tmp) {
-      digitalWrite(DATAOUT, HIGH);
-    }
-    digitalWrite(SPICLOCK, HIGH);
-    fword = fword << 1;
-  }
-  digitalWrite(CS_DAC, HIGH); // end of conversion
-  digitalWrite(LDAC, LOW); // writing data to output buffer
+  write_dac(data);
 
 //  delay(10);
 }
