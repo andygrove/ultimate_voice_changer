@@ -1,3 +1,5 @@
+// pin assigments
+const int LED = 6;
 const int LDAC = 8;
 const int CS_DAC = 9;
 const int CS_ADC = 10;
@@ -5,10 +7,14 @@ const int SPICLOCK = 13;
 const int DATAOUT = 11;
 const int DATAIN = 12;
 
+// SPI command for DAC
+const int cmd = 0x7000;
+
 int fword;
-int cmd = 0x7000;
 int data;
 int tmp;
+int counter = 0;
+long last_time = 0;
 
 #define NUM_SINE_WAVE_POINTS 512
 
@@ -103,6 +109,7 @@ fword = cmd | data;
   digitalWrite(LDAC, LOW); // writing data to output buffer
 }
 
+bool led_on = false;
 
 void loop() {
   if (++index == NUM_SINE_WAVE_POINTS)  {
@@ -111,10 +118,19 @@ void loop() {
   data = sineWave[index] * 5;
 
   int audio_in = read_adc(1);
+
+  //TODO: apply modifications to audio
   
   write_dac(audio_in);
 
-//  delay(10);
+  // blink the LED after every n samples (it just wouldn't be 
+  // an arduino sketch without a blinking LED)
+  long n = 1000;
+  if (++counter==n) {
+    led_on = !led_on;
+    digitalWrite(LED, led_on ? HIGH : LOW);
+    counter = 0;
+  }
 }
 
 void fill_sinewave(){
