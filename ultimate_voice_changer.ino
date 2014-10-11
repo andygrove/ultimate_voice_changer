@@ -145,7 +145,7 @@ void loop() {
   int audio_in = read_adc(1);
 
   // mix audio with sine wave
-  audio_in = (audio_in-2047) * ((data-127) / 127.0);
+  audio_in = 2047 + ((audio_in-2047) * ((data-127) / 127.0));
 
   // clip the signal
   if (audio_in<0) audio_in = 0;
