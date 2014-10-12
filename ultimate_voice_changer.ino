@@ -72,14 +72,14 @@ int read_adc(int channel){
   commandbits|=((channel-1)<<3);
 
   // select ADC
-  PORTB &= B11111011; //digitalWrite(CS_ADC,LOW);
+  PORTB &= ~_BV(CS_ADC);
 
   // setup bits to be written
   for (int i=7; i>=3; i--){
     if (commandbits&1<<i) {
-      PORTB |= B00001000; //digitalWrite(DATAOUT,HIGH);
+      PORTB |= _BV(DATAOUT);
     } else {
-      PORTB &= B11110111; //digitalWrite(DATAOUT,LOW);
+      PORTB &= ~_BV(DATAOUT);
     }
     cycle_clock();
   }
@@ -132,18 +132,32 @@ void write_dac(int data) {
 
 bool led_on = false;
 
-int adj_counter = 0;
-
 int incr = 1;
+
+int dc_bias = 0;
 
 int audio_in;
 
+int sample_counter = 0;
+
+boolean up;
+
 void loop() {
 
-  if (++adj_counter == 100) {
+  ++sample_counter;
+
+  if (sample_counter == 50) {
     int pot = read_adc(2);
-    incr = pot / 100.0;
-    adj_counter = 0;
+    incr = pot >> 5; // (1=2048, 2=1024, 3=512, 4=256, 5=128,6=64, 5=32 )
+    // setp through sine wave with increments between 1 and 40 approximately .. since the sampling rate is 
+    // very roughly 8000/second and the sine wave contains 1024 points this translates to frequencies between 
+    // 8 Hz and 320 Hz ... again, these are very rough calculations for now
+  } else if (sample_counter == 100) {
+    int pot = read_adc(3);
+
+    //TODO: what to do with second pot?
+
+    sample_counter = 0;
 
   } else {
     // sample audio input
@@ -159,6 +173,8 @@ void loop() {
 
   // mix audio with sine wave
   audio_in = 2047 + ((audio_in-2047) * ((data-127) / 127.0));
+
+  //audio_in += dc_bias;
 
   // clip the signal
   if (audio_in<0) audio_in = 0;
