@@ -90,11 +90,11 @@ int read_adc(int channel){
 
   //read bits from adc
   for (int i=11; i>=0; i--){
-    adcvalue += ((PINB & B00010000) >> 4) << i; //digitalRead(DATAIN)<<i;
+    adcvalue += ((PINB & _BV(DATAIN)) >> 4) << i;
     cycle_clock();
   }
 
-  PORTB |= B00000100; //digitalWrite(CS_ADC, HIGH); //turn off device
+  PORTB |= _BV(CS_ADC);
 
   return adcvalue;
 }
