@@ -116,10 +116,10 @@ void write_dac(int data) {
   fword = cmd | data;
   
   // chip select
-  PORTB &= B11111101; //digitalWrite(CS_DAC, LOW);
+  PORTB &= ~_BV(CS_DAC);
   
   // start writing data
-  PORTB |= B00000001; //digitalWrite(LDAC, HIGH);
+  PORTB |= _BV(LDAC);
 
   for (int i1=0; i1<16; i1++) {
     if (fword & 0x8000) {
@@ -134,10 +134,10 @@ void write_dac(int data) {
   }
 
   // end of conversion
-  PORTB |= B00000010; //digitalWrite(CS_DAC, HIGH); 
+  PORTB |= _BV(CS_DAC);
   
   // writing data to output buffer
-  PORTB &= B11111110; //digitalWrite(LDAC, LOW); 
+  PORTB &= ~_BV(LDAC);
 }
 
 bool led_on = false;
