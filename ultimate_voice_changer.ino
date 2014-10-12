@@ -7,8 +7,6 @@
  * http://theotherandygrove.com
  */
 
-const int LED = 6;
-
 // PORTB pin assignments
 const int LDAC = 0;     // Arduino pin 8
 const int CS_DAC = 1;   // Arduino pin 9
