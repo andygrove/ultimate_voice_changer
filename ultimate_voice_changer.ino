@@ -7,14 +7,23 @@
  * http://theotherandygrove.com
  */
 
-// pin assigments
+#ifndef cbi
+#define cbi(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
+#endif
+#ifndef sbi
+#define sbi(sfr, bit) (_SFR_BYTE(sfr) |= _BV(bit))
+#endif 
+
+
 const int LED = 6;
-const int LDAC = 8;
-const int CS_DAC = 9;
-const int CS_ADC = 10;
-const int SPICLOCK = 13;
-const int DATAOUT = 11;
-const int DATAIN = 12;
+
+// PORTB pin assignments
+const int LDAC = 0;     // Arduino pin 8
+const int CS_DAC = 1;   // Arduino pin 9
+const int CS_ADC = 2;   // Arduino pin 10
+const int DATAOUT = 3;  // Arduino pin 11
+const int DATAIN = 4;   // Arduino pin 12
+const int SPICLOCK = 5; // Arduino pin 13
 
 // SPI command for DAC
 const int cmd = 0x7000;
@@ -35,18 +44,21 @@ void setup() {
 
   // use regular arduino code here since this only runs once
 
-  // set pin directions
-  pinMode(LDAC, OUTPUT);
-  pinMode(SPICLOCK, OUTPUT);
-  pinMode(CS_DAC, OUTPUT);
-  pinMode(CS_ADC, OUTPUT);
-  pinMode(DATAOUT, OUTPUT);
-  pinMode(DATAIN, INPUT);
+  // LDAC, CS_DAC, CS_ADC, DATAOUT to OUTPUT
+  DDRB |= _BV(LDAC);
+  DDRB |= _BV(CS_ADC);
+  DDRB |= _BV(CS_DAC);
+  DDRB |= _BV(DATAOUT);
 
-  // disable both the ADC and DAC
-  digitalWrite(CS_ADC, HIGH);
-  digitalWrite(CS_DAC, HIGH);
-  digitalWrite(SPICLOCK, LOW);
+  // set DATAIN to INPUT
+  DDRB &= ~_BV(DATAIN);
+
+  // disable both the ADC and DAC by writing them HIGH
+  PORTB |= _BV(CS_ADC);
+  PORTB |= _BV(CS_DAC);
+
+  // set the clock low
+  PORTB &= ~_BV(SPICLOCK);
 
   // prepare sine wave
   fill_sinewave();
@@ -54,8 +66,8 @@ void setup() {
 
 /** Set CLK HIGH then LOW */
 inline void cycle_clock() {
-  PORTB |= B00100000; //digitalWrite(SPICLOCK,HIGH);
-  PORTB &= B11011111; //digitalWrite(SPICLOCK,LOW);    
+  PORTB |= _BV(SPICLOCK);
+  PORTB &= ~_BV(SPICLOCK);
 }
 
 /** Read from ADC */
