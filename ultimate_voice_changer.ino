@@ -123,14 +123,14 @@ void write_dac(int data) {
 
   for (int i1=0; i1<16; i1++) {
     if (fword & 0x8000) {
-      PORTB |= B00001000; //digitalWrite(DATAOUT, HIGH);
+      PORTB |= _BV(DATAOUT);
     } else {
-      PORTB &= B11110111; //digitalWrite(DATAOUT, LOW);
+      PORTB &= ~_BV(DATAOUT);
     }
 
     cycle_clock();
 
-      fword = fword << 1;
+    fword = fword << 1; 
   }
 
   // end of conversion
