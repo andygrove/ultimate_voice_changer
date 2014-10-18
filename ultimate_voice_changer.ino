@@ -39,6 +39,7 @@ void setup() {
   DDRB |= _BV(CS_ADC);
   DDRB |= _BV(CS_DAC);
   DDRB |= _BV(DATAOUT);
+  DDRB |= _BV(SPICLOCK);
 
   // set DATAIN to INPUT
   DDRB &= ~_BV(DATAIN);
