@@ -3508,7 +3508,8 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 <segment>
 <pinref part="SUPPLY1" gate="G$1" pin="3.3V"/>
 <wire x1="-157.48" y1="66.04" x2="-157.48" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="-157.48" y1="60.96" x2="-139.7" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="3.3V"/>
+<wire x1="-157.48" y1="60.96" x2="-142.24" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
