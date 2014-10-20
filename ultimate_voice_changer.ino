@@ -32,8 +32,6 @@ byte sineWave[NUM_SINE_WAVE_POINTS];
 
 void setup() {
 
-  // use regular arduino code here since this only runs once
-
   // LDAC, CS_DAC, CS_ADC, DATAOUT to OUTPUT
   DDRB |= _BV(LDAC);
   DDRB |= _BV(CS_ADC);
