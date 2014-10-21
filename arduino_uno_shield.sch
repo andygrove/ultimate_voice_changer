@@ -4038,7 +4038,7 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 <instance part="GND17" gate="1" x="25.4" y="-15.24"/>
 <instance part="GND12" gate="1" x="-12.7" y="-25.4"/>
 <instance part="GND14" gate="1" x="-53.34" y="22.86"/>
-<instance part="EXT_LED" gate="G$1" x="-63.5" y="27.94"/>
+<instance part="EXT_LED" gate="G$1" x="-63.5" y="30.48" rot="MR180"/>
 </instances>
 <busses>
 </busses>
@@ -4143,7 +4143,7 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 <wire x1="-12.7" y1="-20.32" x2="-12.7" y2="-22.86" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="EXT_LED" gate="G$1" pin="1"/>
+<pinref part="EXT_LED" gate="G$1" pin="2"/>
 <wire x1="-55.88" y1="27.94" x2="-53.34" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="GND14" gate="1" pin="GND"/>
 <wire x1="-53.34" y1="27.94" x2="-53.34" y2="25.4" width="0.1524" layer="91"/>
@@ -4372,7 +4372,7 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 <wire x1="-91.44" y1="66.04" x2="-63.5" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="-63.5" y1="66.04" x2="-63.5" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="EXT_LED" gate="G$1" pin="2"/>
+<pinref part="EXT_LED" gate="G$1" pin="1"/>
 <wire x1="-55.88" y1="30.48" x2="-53.34" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="-53.34" y1="30.48" x2="-53.34" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="-53.34" y1="66.04" x2="-63.5" y2="66.04" width="0.1524" layer="91"/>
