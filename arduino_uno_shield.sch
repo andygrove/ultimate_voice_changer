@@ -4268,7 +4268,7 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 <wire x1="-50.8" y1="7.62" x2="-45.72" y2="7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$4" class="0">
+<net name="SPI_CLK" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="D13"/>
 <wire x1="-116.84" y1="55.88" x2="-78.74" y2="55.88" width="0.1524" layer="91"/>
@@ -4301,7 +4301,7 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 <wire x1="-33.02" y1="63.5" x2="15.24" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$6" class="0">
+<net name="SPI_MISO" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="D12"/>
 <wire x1="-116.84" y1="58.42" x2="-81.28" y2="58.42" width="0.1524" layer="91"/>
@@ -4312,19 +4312,19 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 <wire x1="-81.28" y1="96.52" x2="-81.28" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="A6" class="0">
+<net name="SPI_MOSI" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="*D11"/>
-<wire x1="-116.84" y1="60.96" x2="-83.82" y2="60.96" width="0.1524" layer="91"/>
-<junction x="-83.82" y="60.96"/>
-<pinref part="MCP3208" gate="A" pin="DIN"/>
-<wire x1="15.24" y1="73.66" x2="-83.82" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="-83.82" y1="73.66" x2="-83.82" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="-83.82" y1="60.96" x2="-83.82" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="-83.82" y1="40.64" x2="-134.62" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="-134.62" y1="40.64" x2="-134.62" y2="-2.54" width="0.1524" layer="91"/>
 <pinref part="MCP4921" gate="A" pin="SDI"/>
 <wire x1="-134.62" y1="-2.54" x2="-119.38" y2="-2.54" width="0.1524" layer="91"/>
+<pinref part="MCP3208" gate="A" pin="DIN"/>
+<wire x1="15.24" y1="73.66" x2="-83.82" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="*D11"/>
+<wire x1="-116.84" y1="60.96" x2="-83.82" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="-83.82" y1="60.96" x2="-83.82" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="-83.82" y1="60.96" x2="-83.82" y2="40.64" width="0.1524" layer="91"/>
+<junction x="-83.82" y="60.96"/>
 </segment>
 </net>
 <net name="N$11" class="0">
@@ -4338,7 +4338,7 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 <wire x1="-137.16" y1="-5.08" x2="-119.38" y2="-5.08" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$13" class="0">
+<net name="CS_ADC" class="0">
 <segment>
 <pinref part="MCP3208" gate="A" pin="~CS/SHDN"/>
 <wire x1="15.24" y1="76.2" x2="-96.52" y2="76.2" width="0.1524" layer="91"/>
@@ -4347,7 +4347,7 @@ Standard schematic elements and footprints for 5mm, 3mm, 1206, and 0603 sized LE
 <wire x1="-96.52" y1="63.5" x2="-116.84" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$5" class="0">
+<net name="CS_DAC" class="0">
 <segment>
 <pinref part="MCP4921" gate="A" pin="~CS"/>
 <wire x1="-119.38" y1="2.54" x2="-129.54" y2="2.54" width="0.1524" layer="91"/>
