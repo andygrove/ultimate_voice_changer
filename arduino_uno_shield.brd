@@ -596,6 +596,22 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package>
 </packages>
 </library>
+<library name="SparkFun-Aesthetics">
+<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
+In this library you'll find non-functional items- supply symbols, logos, notations, frame blocks, etc.&lt;br&gt;&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is the end user's responsibility to ensure correctness and suitablity for a given componet or application. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="CREATIVE_COMMONS">
+<text x="-20.32" y="5.08" size="1.778" layer="51">Released under the Creative Commons Attribution Share-Alike 4.0 License</text>
+<text x="0" y="2.54" size="1.778" layer="51"> https://creativecommons.org/licenses/by-sa/4.0/</text>
+<text x="11.43" y="0" size="1.778" layer="51">Designed by:</text>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -788,11 +804,11 @@ design rules under a new name.</description>
 <element name="AUDIO_JACK" library="SparkFun-Connectors" package="AUDIO-JACK" value="" x="44.45" y="24.13" rot="R90"/>
 <element name="C1" library="SparkFun-Passives" package="CAP-PTH-SMALL" value="0.1uF" x="29.21" y="41.91" smashed="yes" rot="R90">
 <attribute name="NAME" x="27.94" y="42.418" size="1.27" layer="25" rot="R90"/>
-<attribute name="VALUE" x="32.004" y="40.894" size="1.27" layer="27" rot="R90"/>
+<attribute name="VALUE" x="32.004" y="40.894" size="1.27" layer="21" rot="R90"/>
 </element>
 <element name="C2" library="SparkFun-Passives" package="CPOL-RADIAL-10UF-25V" value="10uF" x="40.64" y="43.18" smashed="yes" rot="R180">
 <attribute name="NAME" x="41.529" y="40.386" size="1.27" layer="25" rot="R180"/>
-<attribute name="VALUE" x="42.545" y="46.863" size="1.27" layer="27" rot="R180"/>
+<attribute name="VALUE" x="42.545" y="46.863" size="1.27" layer="21" rot="R180"/>
 </element>
 <element name="LED" library="SparkFun-LED" package="LED5MM" value="" x="15.24" y="25.4" smashed="yes" rot="R90">
 <attribute name="NAME" x="17.2466" y="29.845" size="1.27" layer="25" ratio="10" rot="R180"/>
@@ -851,6 +867,7 @@ design rules under a new name.</description>
 <element name="R3" library="SparkFun-Passives" package="AXIAL-0.4" value="330" x="15.24" y="34.29" rot="R180"/>
 <element name="U$1" library="SparkFun-Boards" package="UNO_R3_SHIELD" value="ARDUINO_R3_SHIELD" x="0" y="20.32"/>
 <element name="EXT_LED" library="SparkFun-Connectors" package="SCREWTERMINAL-3.5MM-2" value="M023.5MM" x="29.21" y="24.13"/>
+<element name="FRAME3" library="SparkFun-Aesthetics" package="CREATIVE_COMMONS" value="FRAME-LETTER" x="20.32" y="-21.59"/>
 </elements>
 <signals>
 <signal name="GND">
