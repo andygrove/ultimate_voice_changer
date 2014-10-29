@@ -8,6 +8,7 @@
  */
 
 #include <avr/io.h>
+#include <avr/power.h>
 #include <util/delay.h>
 
 // PORTB pin assignments
@@ -34,6 +35,11 @@ long last_time = 0;
 uint8_t sineWave[NUM_SINE_WAVE_POINTS];  
 
 void setup(void) {
+
+  clock_prescale_set(clock_div_1); // 8MHz
+
+  // we're not using the onboard ADC so may as well power it down
+  power_adc_disable();
 
   // LDAC, CS_DAC, CS_ADC, DATAOUT to OUTPUT
   DDRB |= (1 << LDAC);
