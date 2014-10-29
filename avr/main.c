@@ -57,9 +57,9 @@ void setup(void) {
 
   // prepare sine wave
   float pi = 3.141592;
-  float dx ;
-  float fd ;
-  float fcnt;
+  float dx = 0.0f;
+  float fd = 0.0f;
+  float fcnt = 0.0f;
   dx=2 * pi / NUM_SINE_WAVE_POINTS;   // fill the  byte bufferarry
   int iw;
   for (iw = 0; iw < NUM_SINE_WAVE_POINTS; iw++){      // with 50 periods sinewawe
