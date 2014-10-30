@@ -147,10 +147,7 @@ void loop() {
 
   if (sample_counter == 400) {
     int pot = read_adc(2);
-    incr = pot >> 5; // (1=2048, 2=1024, 3=512, 4=256, 5=128,6=64, 5=32 )
-    // setp through sine wave with increments between 1 and 40 approximately .. since the sampling rate is 
-    // very roughly 8000/second and the sine wave contains 1024 points this translates to frequencies between 
-    // 8 Hz and 320 Hz ... again, these are very rough calculations for now
+    incr = 1 + (pot/128);
   } else if (sample_counter == 800) {
     int pot = read_adc(3);
 
