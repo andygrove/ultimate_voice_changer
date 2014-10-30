@@ -1,5 +1,5 @@
 /**
- * Ultimate Voice Changer for Arduino
+ * Ultimate Voice Changer for Arduino/AVR.
  *
  * Requires an external board/shield hosting an MCP3208 ADC and an MCP4921 DAC.
  *
@@ -9,7 +9,10 @@
 
 #include <avr/io.h>
 #include <avr/power.h>
+#include <avr/interrupt.h>
 #include <util/delay.h>
+
+#include "wave.h"
 
 // PORTB pin assignments
 const int LDAC = 0;     // PB0 / Arduino pin 8
@@ -25,21 +28,21 @@ const int cmd = 0x7000;
 const long n = 10000;
 
 int myindex = 0;
-int fword;
-int data;
+int fword = 0;
+uint8_t data = 0;
 int counter = 0;
 long last_time = 0;
 
-#define NUM_SINE_WAVE_POINTS 1024
-
-uint8_t sineWave[NUM_SINE_WAVE_POINTS];  
-
 void setup(void) {
 
-  clock_prescale_set(clock_div_1); // 8MHz
+  // set clock to full speed (8 MHz)
+  //clock_prescale_set(clock_div_1);
+
+  // disable interrupts
+  //cli();
 
   // we're not using the onboard ADC so may as well power it down
-  power_adc_disable();
+  //power_adc_disable();
 
   // LDAC, CS_DAC, CS_ADC, DATAOUT to OUTPUT
   DDRB |= (1 << LDAC);
@@ -61,24 +64,10 @@ void setup(void) {
   // set the clock low
   PORTB &= ~(1 << SPICLOCK);
 
-  // prepare sine wave
-  float pi = 3.141592;
-  float dx = 0.0f;
-  float fd = 0.0f;
-  float fcnt = 0.0f;
-  dx=2 * pi / NUM_SINE_WAVE_POINTS;   // fill the  byte bufferarry
-  int iw;
-  for (iw = 0; iw < NUM_SINE_WAVE_POINTS; iw++){      // with 50 periods sinewawe
-    fd= 127*sin(fcnt);                // fundamental tone
-    fcnt=fcnt+dx;                     // in the range of 0 to 2xpi  and 1/512 increments
-    int bb=127+fd;                        // add dc offset to sinewawe 
-    sineWave[iw]=bb;                  // write value into array
-    // uncomment this to see the sine wave numbers in the serial monitor
-    /*
-    Serial.print("Sine: ");
-    Serial.println(bb);
-    */
-  }
+}
+
+inline int pot_to_incr(int pot) {
+  return 1 + (pot/64);
 }
 
 /** Set CLK HIGH then LOW */
@@ -165,30 +154,52 @@ int audio_in;
 
 int sample_counter = 0;
 
-int main(void) {
+/** debug routine to make sure AVR is working. */
+void blink(void) {
+  setup();
+  while (1) {
+    PORTD ^= (1 << 7);
+    _delay_ms(200);
+  }
+}
+
+/** play the sine wave through the DAC. */
+void play_sine_wave(void) {
+  setup();
+  int multiplier = 16;
+  int increment = 1; // 1=30 Hz, 2=60Hz, 3=90Hz ... 7=210 Hz
+  int i = 0;
+  int j = 0;
+  while (1) {
+
+    if (++j==400) {
+      j = 0;
+      increment = pot_to_incr(read_adc(2));
+    }
+
+    uint8_t s = pgm_read_byte(&sineWave[i]);
+
+    write_dac((multiplier*127)+((s-127)*multiplier));
+
+    // increment the index in the wave table
+    i += increment;
+    if (i>=NUM_SINE_WAVE_POINTS) {
+      i -= NUM_SINE_WAVE_POINTS;
+    }
+  }
+}
+
+void ring_modulator(void) {
 
   setup();
 
   while(1) {
 
-    PORTD ^= _BV(7);
-
-//    _delay_ms(250);
-
-    write_dac(read_adc(1));
-
-/*
-
     ++sample_counter;
 
-
     if (sample_counter == 400) {
-      int pot = read_adc(2);
-      incr = pot >> 5; // (1=2048, 2=1024, 3=512, 4=256, 5=128,6=64, 5=32 )
-      // setp through sine wave with increments between 1 and 40 approximately .. since the sampling rate is 
-      // very roughly 8000/second and the sine wave contains 1024 points this translates to frequencies between 
-      // 8 Hz and 320 Hz ... again, these are very rough calculations for now
-
+      incr = pot_to_incr(read_adc(2));
+      sample_counter = 0;
     } else {
       // sample audio input
       audio_in = read_adc(1);
@@ -199,12 +210,11 @@ int main(void) {
     if (myindex >= NUM_SINE_WAVE_POINTS)  {
       myindex -= NUM_SINE_WAVE_POINTS;
     }
-    data = sineWave[myindex];
+    //data = sineWave[myindex];
+    data = pgm_read_byte(&sineWave[myindex]);
 
     // mix audio with sine wave
     audio_in = 2047 + ((audio_in-2047) * ((data-127) / 127.0));
-
-    //audio_in += dc_bias;
 
     // clip the signal
     if (audio_in<0) audio_in = 0;
@@ -212,8 +222,16 @@ int main(void) {
     
     // write output
     write_dac(audio_in);
-*/
   }
+
+}
+
+int main(void) {
+  // choose a routine to call	  
+  //blink();
+  //play_sine_wave();
+  ring_modulator();
+  return 0;
 }
 
     
