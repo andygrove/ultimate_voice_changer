@@ -223,22 +223,6 @@ void loop() {
   
   // write output
   write_dac(audio_in);
-
-  // blink the LED after every n samples (it just wouldn't be 
-  // an arduino sketch without a blinking LED)
-/*
-  if (++counter==n) {
-    led_on = !led_on;
-    if (led_on) {
-      //PORTD |= B01000000;
-      digitalWrite(LED, HIGH);
-    } else {
-      //PORTD &= B10111111;
-      digitalWrite(LED, LOW);
-    }
-    counter = 0;
-  }
-  */
 }
 
 void fill_sinewave(){
