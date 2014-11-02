@@ -1,10 +1,14 @@
 /**
  * Ultimate Voice Changer for Arduino
- *
- * Requires an external board/shield hosting an MCP3208 ADC and an MCP4921 DAC.
- *
  * Created by Andy Grove.
- * http://theotherandygrove.com
+ *
+ * Requires an external board/shield hosting an MCP3208 ADC 
+ * and an MCP4921 DAC as well as a few passive components and
+ * an audio jack.
+ *
+ * For more information, please visit the project page:
+ *
+ * http://theotherandygrove.com/projects/ultimate-voice-changer-arduino-shield/
  */
 
 // comment this out if you don't want the LED working
