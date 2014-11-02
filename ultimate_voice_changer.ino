@@ -7,6 +7,12 @@
  * http://theotherandygrove.com
  */
 
+// comment this out if you don't want the LED working
+#define ENABLE_LED 
+
+// PORTD pin assignments
+const int PORTD_LED = 6;
+
 // PORTB pin assignments
 const int LDAC = 0;     // Arduino pin 8
 const int CS_DAC = 1;   // Arduino pin 9
@@ -26,11 +32,19 @@ int data;
 int counter = 0;
 long last_time = 0;
 
-#define NUM_SINE_WAVE_POINTS 1024
+//TODO: external pots could be used to adjust these values in real-time
+const int threshold = 256;
 
+
+#define NUM_SINE_WAVE_POINTS 1024
 byte sineWave[NUM_SINE_WAVE_POINTS];  
 
 void setup() {
+  
+  cli();
+  
+  // set digital pin 6 to output for the LEDs
+  DDRD |= _BV(PORTD_LED);
 
   // LDAC, CS_DAC, CS_ADC, DATAOUT to OUTPUT
   DDRB |= _BV(LDAC);
@@ -48,6 +62,11 @@ void setup() {
 
   // set the clock low
   PORTB &= ~_BV(SPICLOCK);
+  
+  // turn the LED on briefly to show startup
+  PORTD |= _BV(PORTD_LED);
+  delay(500);
+  PORTD &= ~_BV(PORTD_LED);
 
   // prepare sine wave
   fill_sinewave();
@@ -137,9 +156,15 @@ int dc_bias = 0;
 
 int audio_in;
 
+// this variable is used for the LED PWM effect
+int sound_level = 0;
+int led_counter = 0;
+
 int sample_counter = 0;
 
 boolean up;
+
+
 
 void loop() {
 
@@ -169,8 +194,28 @@ void loop() {
 
   // mix audio with sine wave
   audio_in = 2047 + ((audio_in-2047) * ((data-127) / 127.0));
+  
+#ifdef ENABLE_LED
 
-  //audio_in += dc_bias;
+  if (audio_in > 2048+threshold || audio_in < 2048-threshold) {
+    sound_level = 255;
+  } else {
+    if (sound_level > 0) {
+      sound_level -= 1;
+    }
+  }
+  
+  // crude way to simulate PWM effect, this could be improved by using interrupts
+  if (++led_counter > 255) {
+    led_counter = 0;
+  }
+  if (led_counter < sound_level) {
+    PORTD |= _BV(PORTD_LED);
+  } else {
+    PORTD &= ~_BV(PORTD_LED);
+  }
+
+#endif
 
   // clip the signal
   if (audio_in<0) audio_in = 0;
