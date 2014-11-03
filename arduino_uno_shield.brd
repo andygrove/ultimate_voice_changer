@@ -136,6 +136,8 @@
 <text x="24.13" y="71.12" size="0.8128" layer="21">GND</text>
 <text x="27.94" y="71.12" size="0.8128" layer="21">IN</text>
 <text x="30.48" y="71.12" size="0.8128" layer="21">3V</text>
+<text x="7.62" y="74.93" size="1.27" layer="21">Ultimate Voice Changer Shield v1.0.0</text>
+<text x="7.62" y="72.39" size="1.27" layer="21">theotherandygrove.com</text>
 </plain>
 <libraries>
 <library name="SparkFun-Connectors">
