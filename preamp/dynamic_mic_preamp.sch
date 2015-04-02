@@ -3147,7 +3147,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <part name="C6" library="SparkFun-Passives" deviceset="CAP" device="PTH" value="0.1uF"/>
 <part name="DYN_MIC" library="SparkFun-Connectors" deviceset="M02" device="PTH"/>
 <part name="GND7" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="R5" library="SparkFun-Electromechanical" deviceset="TRIMPOT" device=""/>
+<part name="R5" library="SparkFun-Electromechanical" deviceset="TRIMPOT" device="" value="10K"/>
 <part name="VOICE_CHANGER" library="SparkFun-Connectors" deviceset="M03" device="PTH"/>
 <part name="SUPPLY4" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="GND6" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -3176,7 +3176,10 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <instance part="C6" gate="G$1" x="91.44" y="86.36"/>
 <instance part="DYN_MIC" gate="G$1" x="-7.62" y="71.12"/>
 <instance part="GND7" gate="1" x="2.54" y="58.42"/>
-<instance part="R5" gate="R?" x="76.2" y="60.96" rot="R270"/>
+<instance part="R5" gate="R?" x="76.2" y="60.96" smashed="yes" rot="R270">
+<attribute name="NAME" x="72.6186" y="62.23" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="77.978" y="59.69" size="1.778" layer="96" rot="R270"/>
+</instance>
 <instance part="VOICE_CHANGER" gate="G$1" x="111.76" y="60.96" rot="R180"/>
 <instance part="SUPPLY4" gate="G$1" x="101.6" y="68.58"/>
 <instance part="GND6" gate="1" x="101.6" y="45.72"/>
@@ -3216,15 +3219,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <segment>
 <pinref part="SUPPLY2" gate="G$1" pin="VCC"/>
 <pinref part="U$1" gate="G$1" pin="V+"/>
-<wire x1="58.42" y1="93.98" x2="58.42" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="58.42" y1="88.9" x2="58.42" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="58.42" y1="81.28" x2="58.42" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="81.28" x2="58.42" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="C4" gate="G$1" pin="2"/>
-<wire x1="48.26" y1="88.9" x2="58.42" y2="88.9" width="0.1524" layer="91"/>
-<junction x="58.42" y="81.28"/>
-<junction x="58.42" y="88.9"/>
+<wire x1="58.42" y1="93.98" x2="58.42" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="SUPPLY3" gate="G$1" pin="VCC"/>
@@ -3306,6 +3301,14 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <pinref part="R5" gate="R?" pin="CCW"/>
 <wire x1="68.58" y1="71.12" x2="76.2" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="71.12" x2="76.2" y2="66.04" width="0.1524" layer="91"/>
+<junction x="76.2" y="71.12"/>
+<wire x1="76.2" y1="71.12" x2="76.2" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="R4" gate="G$1" pin="2"/>
+<wire x1="76.2" y1="81.28" x2="50.8" y2="81.28" width="0.1524" layer="91"/>
+<junction x="76.2" y="81.28"/>
+<wire x1="76.2" y1="81.28" x2="76.2" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="C4" gate="G$1" pin="2"/>
+<wire x1="76.2" y1="88.9" x2="48.26" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$5" class="0">
