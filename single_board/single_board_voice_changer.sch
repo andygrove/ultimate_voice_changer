@@ -293,6 +293,18 @@ at 30/07/2012 11:22:31</description>
 <text x="-7.9502" y="18.2118" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
 <text x="-9.3472" y="-4.9022" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
 </package>
+<package name="TO127P254X533-3">
+<pad name="1" x="-2.54" y="-2.54" drill="0.9906" shape="square"/>
+<pad name="2" x="-1.27" y="0" drill="0.9906"/>
+<pad name="3" x="0" y="-2.54" drill="0.9906"/>
+<wire x1="-1.4478" y1="-2.8448" x2="-1.0414" y2="-2.8448" width="0.1524" layer="21"/>
+<wire x1="-3.6322" y1="-2.3876" x2="1.3208" y2="-1.27" width="0" layer="21" curve="-205"/>
+<wire x1="1.3208" y1="-1.27" x2="1.0668" y2="-2.413" width="0" layer="21" curve="-25"/>
+<wire x1="-3.3274" y1="-2.8448" x2="0.7874" y2="-2.8448" width="0.1524" layer="51"/>
+<wire x1="-3.3274" y1="-2.8448" x2="0.7874" y2="-2.8448" width="0" layer="51" curve="-255"/>
+<text x="-5.969" y="1.8542" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="-6.858" y="-5.9944" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="MCP4921-E/P">
@@ -332,6 +344,17 @@ at 30/07/2012 11:22:31</description>
 <wire x1="15.24" y1="22.86" x2="-15.24" y2="22.86" width="0.4064" layer="94"/>
 <text x="-4.7244" y="26.8986" size="2.0828" layer="95" ratio="10" rot="SR0">&gt;NAME</text>
 <text x="-5.715" y="-33.2232" size="2.0828" layer="96" ratio="10" rot="SR0">&gt;VALUE</text>
+</symbol>
+<symbol name="MCP1702-3302E/TO">
+<pin name="VIN" x="-17.78" y="0" length="middle" direction="in"/>
+<pin name="GND" x="-17.78" y="-5.08" length="middle" direction="pas"/>
+<pin name="VOUT" x="17.78" y="-2.54" length="middle" direction="out" rot="R180"/>
+<wire x1="-12.7" y1="5.08" x2="-12.7" y2="-10.16" width="0.4064" layer="94"/>
+<wire x1="-12.7" y1="-10.16" x2="12.7" y2="-10.16" width="0.4064" layer="94"/>
+<wire x1="12.7" y1="-10.16" x2="12.7" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="12.7" y1="5.08" x2="-12.7" y2="5.08" width="0.4064" layer="94"/>
+<text x="-4.8006" y="6.731" size="2.0828" layer="95" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="-5.8166" y="-13.5636" size="2.0828" layer="96" ratio="10" rot="SR0">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -393,6 +416,30 @@ at 30/07/2012 11:22:31</description>
 <attribute name="OC_FARNELL" value="9758593" constant="no"/>
 <attribute name="OC_NEWARK" value="19C7209" constant="no"/>
 <attribute name="PACKAGE" value="DIP-14" constant="no"/>
+<attribute name="SUPPLIER" value="Microchip" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MCP1702-3302E/TO" prefix="Q">
+<description>IC, V REG, LDO, 250MA</description>
+<gates>
+<gate name="A" symbol="MCP1702-3302E/TO" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TO127P254X533-3">
+<connects>
+<connect gate="A" pin="GND" pad="1"/>
+<connect gate="A" pin="VIN" pad="2"/>
+<connect gate="A" pin="VOUT" pad="3"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MPN" value="MCP1702-3302E/TO" constant="no"/>
+<attribute name="OC_FARNELL" value="1331485" constant="no"/>
+<attribute name="OC_NEWARK" value="34M7419" constant="no"/>
+<attribute name="PACKAGE" value="TO-92" constant="no"/>
 <attribute name="SUPPLIER" value="Microchip" constant="no"/>
 </technology>
 </technologies>
@@ -7160,24 +7207,6 @@ Standard 7805 5V regulator. IGO (Input Ground Output). Spark Fun Electronics SKU
 </device>
 </devices>
 </deviceset>
-<deviceset name="V_REG_LD1117VXX">
-<description>LD1117VXX voltage regulator. We carry the 3.3V version (COM-00526) in TO-220 package.</description>
-<gates>
-<gate name="G$1" symbol="78XX" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="78XXL">
-<connects>
-<connect gate="G$1" pin="GND" pad="IN"/>
-<connect gate="G$1" pin="IN" pad="OUT"/>
-<connect gate="G$1" pin="OUT" pad="GND"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 </devicesets>
 </library>
 <library name="SparkFun-Capacitors">
@@ -7645,7 +7674,6 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="IC1" library="SparkFun-PowerIC" deviceset="V_REG_78XX" device="SIDE"/>
 <part name="GND10" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
-<part name="U$3" library="SparkFun-PowerIC" deviceset="V_REG_LD1117VXX" device=""/>
 <part name="SUPPLY2" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="GND11" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND12" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -7666,6 +7694,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="INPUT2" library="SparkFun-Connectors" deviceset="M03" device="PTH"/>
 <part name="INPUT3" library="SparkFun-Connectors" deviceset="M03" device="PTH"/>
 <part name="INPUT4" library="SparkFun-Connectors" deviceset="M03" device="PTH"/>
+<part name="U$3" library="Microchip_By_element14_Batch_1" deviceset="MCP1702-3302E/TO" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7698,9 +7727,8 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <instance part="IC1" gate="G$1" x="-27.94" y="104.14"/>
 <instance part="GND10" gate="1" x="-27.94" y="91.44"/>
 <instance part="SUPPLY1" gate="G$1" x="-17.78" y="106.68"/>
-<instance part="U$3" gate="G$1" x="-5.08" y="104.14"/>
 <instance part="SUPPLY2" gate="G$1" x="25.4" y="63.5"/>
-<instance part="GND11" gate="1" x="-5.08" y="91.44"/>
+<instance part="GND11" gate="1" x="-7.62" y="91.44"/>
 <instance part="GND12" gate="1" x="-17.78" y="88.9"/>
 <instance part="C3" gate="G$1" x="-17.78" y="96.52"/>
 <instance part="ICSP" gate="G$1" x="-35.56" y="33.02"/>
@@ -7719,6 +7747,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <instance part="INPUT2" gate="G$1" x="22.86" y="-30.48"/>
 <instance part="INPUT3" gate="G$1" x="48.26" y="-30.48"/>
 <instance part="INPUT4" gate="G$1" x="73.66" y="-30.48"/>
+<instance part="U$3" gate="A" x="12.7" y="104.14"/>
 </instances>
 <busses>
 </busses>
@@ -7793,11 +7822,6 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <wire x1="-27.94" y1="96.52" x2="-27.94" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="GND11" gate="1" pin="GND"/>
-<pinref part="U$3" gate="G$1" pin="GND"/>
-<wire x1="-5.08" y1="93.98" x2="-5.08" y2="96.52" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="GND12" gate="1" pin="GND"/>
 <pinref part="C3" gate="G$1" pin="2"/>
 <wire x1="-17.78" y1="91.44" x2="-17.78" y2="93.98" width="0.1524" layer="91"/>
@@ -7843,6 +7867,12 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <wire x1="81.28" y1="-33.02" x2="91.44" y2="-33.02" width="0.1524" layer="91"/>
 <label x="81.28" y="-33.02" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U$3" gate="A" pin="GND"/>
+<wire x1="-5.08" y1="99.06" x2="-7.62" y2="99.06" width="0.1524" layer="91"/>
+<pinref part="GND11" gate="1" pin="GND"/>
+<wire x1="-7.62" y1="99.06" x2="-7.62" y2="93.98" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="VCC" class="0">
 <segment>
@@ -7863,10 +7893,10 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <wire x1="-20.32" y1="104.14" x2="-17.78" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="-17.78" y1="104.14" x2="-17.78" y2="106.68" width="0.1524" layer="91"/>
 <junction x="-17.78" y="104.14"/>
-<pinref part="U$3" gate="G$1" pin="IN"/>
-<wire x1="-17.78" y1="104.14" x2="-12.7" y2="104.14" width="0.1524" layer="91"/>
 <pinref part="C3" gate="G$1" pin="1"/>
 <wire x1="-17.78" y1="101.6" x2="-17.78" y2="104.14" width="0.1524" layer="91"/>
+<pinref part="U$3" gate="A" pin="VIN"/>
+<wire x1="-5.08" y1="104.14" x2="-17.78" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="AVCC"/>
@@ -8073,11 +8103,6 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <label x="106.68" y="20.32" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$3" gate="G$1" pin="OUT"/>
-<wire x1="2.54" y1="104.14" x2="12.7" y2="104.14" width="0.1524" layer="91"/>
-<label x="2.54" y="104.14" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="INPUT1" gate="G$1" pin="3"/>
 <wire x1="5.08" y1="-27.94" x2="15.24" y2="-27.94" width="0.1524" layer="91"/>
 <label x="5.08" y="-27.94" size="1.778" layer="95"/>
@@ -8096,6 +8121,11 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <pinref part="INPUT4" gate="G$1" pin="3"/>
 <wire x1="81.28" y1="-27.94" x2="91.44" y2="-27.94" width="0.1524" layer="91"/>
 <label x="81.28" y="-27.94" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="A" pin="VOUT"/>
+<wire x1="30.48" y1="101.6" x2="45.72" y2="101.6" width="0.1524" layer="91"/>
+<label x="33.02" y="101.6" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LDAC" class="0">
