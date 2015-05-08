@@ -17,6 +17,9 @@
 // PORTD pin assignments
 const int PORTD_LED = 6;
 
+// uncomment this line to use MCP3202 instead of MCP3204/8
+//#define MCP3202
+
 // PORTB pin assignments
 const int LDAC = 0;     // Arduino pin 8
 const int CS_DAC = 1;   // Arduino pin 9
@@ -83,7 +86,45 @@ inline void cycle_clock() {
 }
 
 /** Read from ADC */
-int read_adc(int channel){
+int read_adc_mcp3202(int channel){
+
+  int adcvalue = 0;
+
+  // command bits - start, sgl/diff, odd/sign, channel 0, channel 1
+  byte commandbits = B11010000; 
+
+  // allow channel selection
+  commandbits|=((channel-1)<<5);
+
+  // select ADC
+  PORTB &= ~_BV(CS_ADC);
+
+  // setup bits to be written
+  for (int i=7; i>=4; i--){
+    if (commandbits&1<<i) {
+      PORTB |= _BV(DATAOUT);
+    } else {
+      PORTB &= ~_BV(DATAOUT);
+    }
+    cycle_clock();
+  }
+
+  //cycle clock to ignore null bit
+  cycle_clock();
+
+  //read bits from adc
+  for (int i=11; i>=0; i--){
+    adcvalue += ((PINB & _BV(DATAIN)) >> 4) << i;
+    cycle_clock();
+  }
+
+  PORTB |= _BV(CS_ADC);
+
+  return adcvalue;
+}
+
+/** Read from ADC */
+int read_adc_mcp3208(int channel){
 
   int adcvalue = 0;
 
@@ -120,6 +161,15 @@ int read_adc(int channel){
 
   return adcvalue;
 }
+
+int read_adc(int channel){
+#ifdef MCP3202
+  return read_adc_mcp3202(channel);
+#else
+  return read_adc_mcp3208(channel);
+#endif
+}
+
 
 /** Write to DAC */
 void write_dac(int data) {
@@ -177,12 +227,6 @@ void loop() {
   if (sample_counter == 400) {
     int pot = read_adc(2);
     incr = 1 + (pot/128);
-  } else if (sample_counter == 800) {
-    int pot = read_adc(3);
-
-    //TODO: what to do with second pot?
-
-    sample_counter = 0;
 
   } else {
     // sample audio input
