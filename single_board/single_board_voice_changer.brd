@@ -1089,6 +1089,12 @@ design rules under a new name.</description>
 <wire x1="26.5176" y1="33.147" x2="24.9174" y2="34.7472" width="0.254" layer="1"/>
 <wire x1="7.0866" y1="31.0896" x2="7.62" y2="30.48" width="0.254" layer="1"/>
 <wire x1="26.5176" y1="33.147" x2="26.67" y2="33.02" width="0.254" layer="1"/>
+<contactref element="INPUT1" pad="3"/>
+<contactref element="INPUT2" pad="3"/>
+<wire x1="44.577" y1="10.0584" x2="44.577" y2="3.8862" width="0.254" layer="1"/>
+<wire x1="44.577" y1="3.8862" x2="44.45" y2="3.81" width="0.254" layer="1"/>
+<wire x1="44.577" y1="10.0584" x2="44.45" y2="10.16" width="0" layer="19" extent="1-1"/>
+<wire x1="41.91" y1="16.51" x2="44.45" y2="10.16" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCK">
 <contactref element="U1" pad="19"/>
@@ -1219,13 +1225,6 @@ design rules under a new name.</description>
 <wire x1="31.7754" y1="53.2638" x2="36.8046" y2="53.2638" width="0.254" layer="1"/>
 <wire x1="36.8046" y1="53.2638" x2="36.83" y2="53.34" width="0.254" layer="1"/>
 <wire x1="31.7754" y1="53.2638" x2="31.75" y2="53.34" width="0.254" layer="1"/>
-</signal>
-<signal name="VREF">
-<contactref element="INPUT1" pad="3"/>
-<contactref element="INPUT2" pad="3"/>
-<wire x1="44.577" y1="10.0584" x2="44.577" y2="3.8862" width="0.254" layer="1"/>
-<wire x1="44.577" y1="3.8862" x2="44.45" y2="3.81" width="0.254" layer="1"/>
-<wire x1="44.577" y1="10.0584" x2="44.45" y2="10.16" width="0.254" layer="1"/>
 </signal>
 <signal name="LDAC">
 <contactref element="U1" pad="14"/>

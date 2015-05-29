@@ -13,12 +13,13 @@
 
 // comment this out if you don't want the LED working
 #define ENABLE_LED 
+//#define ENABLE_POT
 
 // PORTD pin assignments
 const int PORTD_LED = 6;
 
 // uncomment this line to use MCP3202 instead of MCP3204/8
-//#define MCP3202
+#define MCP3202
 
 // PORTB pin assignments
 const int LDAC = 0;     // Arduino pin 8
@@ -204,7 +205,7 @@ void write_dac(int data) {
 
 bool led_on = false;
 
-int incr = 1;
+int incr = 2;
 
 int dc_bias = 0;
 
@@ -225,8 +226,10 @@ void loop() {
   ++sample_counter;
 
   if (sample_counter == 400) {
+#ifdef ENABLE_POT
     int pot = read_adc(2);
     incr = 1 + (pot/128);
+#endif
 
   } else {
     // sample audio input

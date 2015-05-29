@@ -7935,6 +7935,16 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21034D.pdf</description>
 <wire x1="119.38" y1="68.58" x2="109.22" y2="68.58" width="0.1524" layer="91"/>
 <label x="109.22" y="68.58" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="INPUT1" gate="G$1" pin="3"/>
+<wire x1="5.08" y1="-27.94" x2="15.24" y2="-27.94" width="0.1524" layer="91"/>
+<label x="5.08" y="-27.94" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="INPUT2" gate="G$1" pin="3"/>
+<wire x1="30.48" y1="-27.94" x2="40.64" y2="-27.94" width="0.1524" layer="91"/>
+<label x="30.48" y="-27.94" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="SCK" class="0">
 <segment>
@@ -8076,18 +8086,6 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21034D.pdf</description>
 <pinref part="U$1" gate="A" pin="VOUTA"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="154.94" y1="73.66" x2="160.02" y2="73.66" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="VREF" class="0">
-<segment>
-<pinref part="INPUT1" gate="G$1" pin="3"/>
-<wire x1="5.08" y1="-27.94" x2="15.24" y2="-27.94" width="0.1524" layer="91"/>
-<label x="5.08" y="-27.94" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="INPUT2" gate="G$1" pin="3"/>
-<wire x1="30.48" y1="-27.94" x2="40.64" y2="-27.94" width="0.1524" layer="91"/>
-<label x="30.48" y="-27.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LDAC" class="0">
