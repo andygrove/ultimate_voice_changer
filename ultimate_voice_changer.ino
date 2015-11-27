@@ -13,13 +13,25 @@
 
 // comment this out if you don't want the LED working
 #define ENABLE_LED 
-//#define ENABLE_POT
+
+// comment this out if you don't have a pot attached to the second input
+#define ENABLE_POT
+
+// the code now supports some different effects modes, mostly to help with debugging
+#define MODE_NO_EFFECT 1 // this mode passes the mic input directly to the audio out without modification
+#define MODE_RING_MOD  2 // this is the default ring modulator mode where the mic input is mixed with a sine wave then written to audio out
+#define MODE_SINE_WAVE 3 // this mode writes the sine wave directly to audio out
+
+const int mode = MODE_RING_MOD;
+
+// number of points in sine wave data
+#define NUM_SINE_WAVE_POINTS 1024
 
 // PORTD pin assignments
 const int PORTD_LED = 6;
 
 // uncomment this line to use MCP3202 instead of MCP3204/8
-#define MCP3202
+//#define MCP3202
 
 // PORTB pin assignments
 const int LDAC = 0;     // Arduino pin 8
@@ -32,7 +44,8 @@ const int SPICLOCK = 5; // Arduino pin 13
 // SPI command for DAC
 const int cmd = 0x7000;
 
-const long n = 10000;
+// threshold for tuning sensitivity of LED response to sound levels
+const int threshold = 256;
 
 int index = 0;
 int fword;
@@ -40,15 +53,25 @@ int data;
 int counter = 0;
 long last_time = 0;
 
-//TODO: external pots could be used to adjust these values in real-time
-const int threshold = 256;
+// speed to iterate over sine wave .. changing this affects the frequency
+int incr = 2;
 
+// this variable is used for the LED PWM effect
+int sound_level = 0;
+int led_counter = 0;
+int sample_counter = 0;
+int audio_in = 0;
+int audio_out = 0;
 
-#define NUM_SINE_WAVE_POINTS 1024
 byte sineWave[NUM_SINE_WAVE_POINTS];  
 
 void setup() {
   
+  // prepare sine wave
+  fill_sinewave();
+
+  delay(1000);
+
   cli();
   
   // set digital pin 6 to output for the LEDs
@@ -75,9 +98,6 @@ void setup() {
   PORTD |= _BV(PORTD_LED);
   delay(500);
   PORTD &= ~_BV(PORTD_LED);
-
-  // prepare sine wave
-  fill_sinewave();
 }
 
 /** Set CLK HIGH then LOW */
@@ -203,29 +223,13 @@ void write_dac(int data) {
   PORTB &= ~_BV(LDAC);
 }
 
-bool led_on = false;
-
-int incr = 2;
-
-int dc_bias = 0;
-
-int audio_in;
-
-// this variable is used for the LED PWM effect
-int sound_level = 0;
-int led_counter = 0;
-
-int sample_counter = 0;
-
-boolean up;
-
-
-
 void loop() {
 
   ++sample_counter;
 
   if (sample_counter == 400) {
+    sample_counter = 0;
+    
 #ifdef ENABLE_POT
     int pot = read_adc(2);
     incr = 1 + (pot/128);
@@ -244,7 +248,14 @@ void loop() {
   data = sineWave[index];
 
   // mix audio with sine wave
-  audio_in = 2047 + ((audio_in-2047) * ((data-127) / 127.0));
+  if (mode == MODE_SINE_WAVE) {
+    audio_in = 4095;
+    audio_out = 2047 + ((audio_in-2047) * ((data-127) / 127.0));
+  } else if (mode == MODE_RING_MOD) {
+    audio_out = 2047 + ((audio_in-2047) * ((data-127) / 127.0));
+  } else {
+    audio_out = audio_in;
+  }
   
 #ifdef ENABLE_LED
 
@@ -269,19 +280,18 @@ void loop() {
 #endif
 
   // clip the signal
-  if (audio_in<0) audio_in = 0;
-  else if (audio_in>4095) audio_in = 4095;
+  if (audio_out<0) audio_out = 0;
+  else if (audio_out>4095) audio_out = 4095;
   
   // write output
-  write_dac(audio_in);
+  write_dac(audio_out);
 }
 
 void fill_sinewave(){
   float pi = 3.141592;
-  float dx ;
-  float fd ;
-  float fcnt;
-  dx=2 * pi / NUM_SINE_WAVE_POINTS;   // fill the  byte bufferarry
+  float dx = dx = 2 * pi / NUM_SINE_WAVE_POINTS;   // fill the  byte bufferarry
+  float fd = 0;
+  float fcnt = 0;
   int iw;
   for (iw = 0; iw < NUM_SINE_WAVE_POINTS; iw++){      // with 50 periods sinewawe
     fd= 127*sin(fcnt);                // fundamental tone
@@ -289,10 +299,10 @@ void fill_sinewave(){
     int bb=127+fd;                        // add dc offset to sinewawe 
     sineWave[iw]=bb;                  // write value into array
     // uncomment this to see the sine wave numbers in the serial monitor
-    /*
+    
     Serial.print("Sine: ");
     Serial.println(bb);
-    */
+    
   }
 }    
     
