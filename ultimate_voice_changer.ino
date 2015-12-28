@@ -62,6 +62,7 @@ int led_counter = 0;
 int sample_counter = 0;
 int audio_in = 0;
 int audio_out = 0;
+int dc_offset = 2063;
 
 byte sineWave[NUM_SINE_WAVE_POINTS];  
 
@@ -191,7 +192,6 @@ int read_adc(int channel){
 #endif
 }
 
-
 /** Write to DAC */
 void write_dac(int data) {
 
@@ -250,9 +250,9 @@ void loop() {
   // mix audio with sine wave
   if (mode == MODE_SINE_WAVE) {
     audio_in = 4095;
-    audio_out = 2047 + ((audio_in-2047) * ((data-127) / 127.0));
+    audio_out = 2047 + ((audio_in-dc_offset) * ((data-127) / 127.0));
   } else if (mode == MODE_RING_MOD) {
-    audio_out = 2047 + ((audio_in-2047) * ((data-127) / 127.0));
+    audio_out = 2047 + ((audio_in-dc_offset) * ((data-127) / 127.0));
   } else {
     audio_out = audio_in;
   }
@@ -282,6 +282,11 @@ void loop() {
   // clip the signal
   if (audio_out<0) audio_out = 0;
   else if (audio_out>4095) audio_out = 4095;
+
+  // attempt to reduce noise
+  if (audio_out > 2030 && audio_out < 2100) {
+    audio_out = 2047;
+  }
   
   // write output
   write_dac(audio_out);
