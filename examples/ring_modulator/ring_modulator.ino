@@ -11,6 +11,10 @@
  * http://theotherandygrove.com/projects/ultimate-voice-changer-arduino-shield/
  */
 
+#include <UVC_Const.h>
+#include <MCP3208.h>
+#include <MCP4921.h>
+ 
 // comment this out if you don't want the LED working
 #define ENABLE_LED
 
@@ -30,13 +34,8 @@ const int mode = MODE_RING_MOD;
 // PORTD pin assignments
 const int PORTD_LED = 6;
 
-// uncomment this line to use MCP3202 instead of MCP3204/8
-//#define MCP3202
-
-// PORTB pin assignments
-
-const int SPICLOCK = 5; // Arduino pin 13
-
+MCP3208 adc;
+MCP4921 dac;
 
 // threshold for tuning sensitivity of LED response to sound levels
 const int threshold = 256;
@@ -62,47 +61,23 @@ byte sineWave[NUM_SINE_WAVE_POINTS];
 
 void setup() {
 
+  // set clock low
+  DDRB |= _BV(SPICLOCK);
+  PORTB &= ~_BV(SPICLOCK);
+
   // prepare sine wave
   fill_sinewave();
-
-  delay(1000);
 
   cli();
 
   // set digital pin 6 to output for the LEDs
   DDRD |= _BV(PORTD_LED);
 
-  // LDAC, CS_DAC, CS_ADC, DATAOUT to OUTPUT
-  DDRB |= _BV(LDAC);
-  DDRB |= _BV(CS_ADC);
-
-  // CS_DAC, DATAOUT to OUTPUT
-  DDRB |= _BV(CS_DAC);
-  DDRB |= _BV(DATAOUT);
-
-  // set DATAIN to INPUT
-  DDRB &= ~_BV(DATAIN);
-
-  // disable both the ADC and DAC by writing them HIGH
-  PORTB |= _BV(CS_ADC);
-  PORTB |= _BV(CS_DAC);
-
-  // set the clock low
-  DDRB |= _BV(SPICLOCK);
-  PORTB &= ~_BV(SPICLOCK);
-
   // turn the LED on briefly to show startup
   PORTD |= _BV(PORTD_LED);
   delay(500);
   PORTD &= ~_BV(PORTD_LED);
 }
-
-/** Set CLK HIGH then LOW */
-inline void cycle_clock() {
-  PORTB |= _BV(SPICLOCK);
-  PORTB &= ~_BV(SPICLOCK);
-}
-
 
 void loop() {
 
@@ -112,13 +87,13 @@ void loop() {
     sample_counter = 0;
 
 #ifdef ENABLE_POT
-    int pot = read_adc(2);
+    int pot = adc.read(2);
     incr = 1 + (pot/128);
 #endif
 
   } else {
-    // sample audio input
-    audio_in = read_adc(1);
+    // sample audio input from channel 1
+    audio_in = adc.read(1);
   }
 
   // get next point in sine wave table
@@ -170,7 +145,7 @@ void loop() {
   }
 
   // write output
-  write_dac(audio_out);
+  dac.write(audio_out);
 }
 
 void fill_sinewave(){

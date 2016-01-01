@@ -1,18 +1,24 @@
 
+#include <Arduino.h>
+#include "UVC_Const.h"
 #include "MCP4921.h"
+
+// SPI command for DAC
+const int cmd = 0x7000;
 
 MCP4921::MCP4921() {
   // LDAC, CS_DAC, CS_ADC, DATAOUT to OUTPUT
   DDRB |= _BV(LDAC);
-  DDRB |= _BV(CS_ADC);
+  DDRB |= _BV(CS_DAC);
 
-
+  // disable the DAC by writing chip-select HIGH
+  PORTB |= _BV(CS_DAC);
 }
 
 void MCP4921::write(unsigned int value) {
 
   // combine command and data
-  fword = cmd | data;
+  fword = cmd | value;
 
   // chip select
   PORTB &= ~_BV(CS_DAC);
@@ -38,4 +44,10 @@ void MCP4921::write(unsigned int value) {
   // writing data to output buffer
   PORTB &= ~_BV(LDAC);
 
+}
+
+inline void MCP4921::cycle_clock() {
+  /** Set CLK HIGH then LOW */
+  PORTB |= _BV(SPICLOCK);
+  PORTB &= ~_BV(SPICLOCK);
 }

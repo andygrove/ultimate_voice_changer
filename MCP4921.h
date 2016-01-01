@@ -2,15 +2,13 @@
 #ifndef _MCP4921_H
 #define _MCP4921_H
 
-const int LDAC = 0;     // Arduino pin 8
-const int CS_DAC = 1;   // Arduino pin 9
-// SPI command for DAC
-const int cmd = 0x7000;
-
-
 class MCP4921 {
 public:
+  MCP4921();
   void write(unsigned int value);
-}
+private:
+  void cycle_clock();
+  int fword;
+};
 
 #endif //_MCP4921_H

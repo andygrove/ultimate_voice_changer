@@ -1,7 +1,10 @@
+#include <Arduino.h>
+#include "UVC_Const.h"
 #include "MCP3202.h"
 
-MCP3202::MCP3202() {
 
+MCP3202::MCP3202() {
+/*
   // CS_DAC, DATAOUT to OUTPUT
   DDRB |= _BV(CS_DAC);
   DDRB |= _BV(DATAOUT);
@@ -9,12 +12,17 @@ MCP3202::MCP3202() {
   // set DATAIN to INPUT
   DDRB &= ~_BV(DATAIN);
 
+  // disable DAC by writing chip-select HIGH
+  PORTB |= _BV(CS_C);
+
+
+*/
 }
 
 /** Read from ADC */
-unsigned int MCP3208::read(unsigned int channel){
-  
+unsigned int MCP3202::read(unsigned int channel){
   int adcvalue = 0;
+  /*
 
   // command bits - start, sgl/diff, odd/sign, channel 0, channel 1
   byte commandbits = B11010000;
@@ -36,15 +44,21 @@ unsigned int MCP3208::read(unsigned int channel){
   }
 
   //cycle clock to ignore null bit
-  cycle_clock();
+  clock.cycle();
 
   //read bits from adc
   for (int i=11; i>=0; i--){
     adcvalue += ((PINB & _BV(DATAIN)) >> 4) << i;
-    cycle_clock();
+    clock.cycle();
   }
 
   PORTB |= _BV(CS_ADC);
-
+*/
   return adcvalue;
+}
+
+inline void MCP3202::cycle_clock() {
+  /** Set CLK HIGH then LOW */
+  PORTB |= _BV(SPICLOCK);
+  PORTB &= ~_BV(SPICLOCK);
 }

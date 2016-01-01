@@ -1,13 +1,18 @@
+#include <Arduino.h>
+#include "UVC_Const.h"
 #include "MCP3208.h"
 
 MCP3208::MCP3208() {
 
-  // CS_DAC, DATAOUT to OUTPUT
-  DDRB |= _BV(CS_DAC);
+  // CS_ADC, DATAOUT to OUTPUT
+  DDRB |= _BV(CS_ADC);
   DDRB |= _BV(DATAOUT);
 
   // set DATAIN to INPUT
   DDRB &= ~_BV(DATAIN);
+
+  // disable DAC by writing chip-select HIGH
+  PORTB |= _BV(CS_ADC);
 
 }
 
@@ -48,4 +53,10 @@ unsigned int MCP3208::read(unsigned int channel){
   PORTB |= _BV(CS_ADC);
 
   return adcvalue;
+}
+
+inline void MCP3208::cycle_clock() {
+  /** Set CLK HIGH then LOW */
+  PORTB |= _BV(SPICLOCK);
+  PORTB &= ~_BV(SPICLOCK);
 }
