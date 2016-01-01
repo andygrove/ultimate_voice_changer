@@ -14,6 +14,7 @@
 #include <UVC_Const.h>
 #include <MCP3208.h>
 #include <MCP4921.h>
+#include <Sinewave.h>
  
 // comment this out if you don't want the LED working
 #define ENABLE_LED
@@ -36,12 +37,12 @@ const int PORTD_LED = 6;
 
 MCP3208 adc;
 MCP4921 dac;
+Sinewave sinewave(NUM_SINE_WAVE_POINTS);
 
 // threshold for tuning sensitivity of LED response to sound levels
 const int threshold = 256;
 
 int index = 0;
-int fword;
 int data;
 int counter = 0;
 long last_time = 0;
@@ -57,17 +58,13 @@ int audio_in = 0;
 int audio_out = 0;
 int dc_offset = 2063;
 
-byte sineWave[NUM_SINE_WAVE_POINTS];
-
 void setup() {
 
   // set clock low
   DDRB |= _BV(SPICLOCK);
   PORTB &= ~_BV(SPICLOCK);
 
-  // prepare sine wave
-  fill_sinewave();
-
+  // disable interrupts (not needed for this sketch)
   cli();
 
   // set digital pin 6 to output for the LEDs
@@ -101,7 +98,7 @@ void loop() {
   if (index >= NUM_SINE_WAVE_POINTS)  {
     index -= NUM_SINE_WAVE_POINTS;
   }
-  data = sineWave[index];
+  data = sinewave.get(index);
 
   // mix audio with sine wave
   if (mode == MODE_SINE_WAVE) {
@@ -139,7 +136,7 @@ void loop() {
   if (audio_out<0) audio_out = 0;
   else if (audio_out>4095) audio_out = 4095;
 
-  // attempt to reduce noise
+  // attempt to reduce noise by not amplifying around the midpoint
   if (audio_out > 2030 && audio_out < 2100) {
     audio_out = 2047;
   }
@@ -148,21 +145,3 @@ void loop() {
   dac.write(audio_out);
 }
 
-void fill_sinewave(){
-  float pi = 3.141592;
-  float dx = dx = 2 * pi / NUM_SINE_WAVE_POINTS;   // fill the  byte bufferarry
-  float fd = 0;
-  float fcnt = 0;
-  int iw;
-  for (iw = 0; iw < NUM_SINE_WAVE_POINTS; iw++){      // with 50 periods sinewawe
-    fd= 127*sin(fcnt);                // fundamental tone
-    fcnt=fcnt+dx;                     // in the range of 0 to 2xpi  and 1/512 increments
-    int bb=127+fd;                        // add dc offset to sinewawe
-    sineWave[iw]=bb;                  // write value into array
-    // uncomment this to see the sine wave numbers in the serial monitor
-
-    Serial.print("Sine: ");
-    Serial.println(bb);
-
-  }
-}
