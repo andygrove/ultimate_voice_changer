@@ -2,13 +2,13 @@
 
 ## What is this?
 
-This is the official Arduino library for the Ultimate Voice Changer Arduino Shield, which is an open source hardware project that uses an MCP3208 ADC and an MCP4921 DAC with SPI communications to provide high quality voice sampling and real-time manipulation.
+This is the official Arduino library for the Ultimate Voice Changer Arduino Shield, which is an open source hardware project that uses an MCP3208 ADC and an MCP4921 DAC with SPI communications to provide high quality voice sampling and real-time audio manipulation.
 
-Eagle schematics and board layout for an Arduino Uno shield are included.
+## Hardware
 
-## Kits also available
+Eagle schematics and board layout for an Arduino Uno shield are included in this repository.
 
-I also sell kits on Tindie if you don't want to order all of the components separately:
+I also sell kits on Tindie if you don't want to build your own PCB.
 
 https://www.tindie.com/products/andygrove73/ultimate-voice-changer-arduino-shield-2/
 
