@@ -470,47 +470,43 @@ You are welcome to use this library for commercial purposes. For attribution, we
 element14 CAD Library consolidation.ulp
 at 30/07/2012 11:22:31</description>
 <packages>
-<package name="DIP254P762X432-16">
-<pad name="1" x="-7.62" y="17.78" drill="0.9906" shape="square"/>
-<pad name="2" x="-7.62" y="15.24" drill="0.9906"/>
-<pad name="3" x="-7.62" y="12.7" drill="0.9906"/>
-<pad name="4" x="-7.62" y="10.16" drill="0.9906"/>
-<pad name="5" x="-7.62" y="7.62" drill="0.9906"/>
-<pad name="6" x="-7.62" y="5.08" drill="0.9906"/>
-<pad name="7" x="-7.62" y="2.54" drill="0.9906"/>
-<pad name="8" x="-7.62" y="0" drill="0.9906"/>
-<pad name="9" x="0" y="0" drill="0.9906"/>
-<pad name="10" x="0" y="2.54" drill="0.9906"/>
-<pad name="11" x="0" y="5.08" drill="0.9906"/>
-<pad name="12" x="0" y="7.62" drill="0.9906"/>
-<pad name="13" x="0" y="10.16" drill="0.9906"/>
-<pad name="14" x="0" y="12.7" drill="0.9906"/>
-<pad name="15" x="0" y="15.24" drill="0.9906"/>
-<pad name="16" x="0" y="17.78" drill="0.9906"/>
-<wire x1="-0.508" y1="16.2052" x2="-0.508" y2="16.8148" width="0.1524" layer="21"/>
+<package name="DIP254P762X432-14">
+<pad name="1" x="-7.62" y="15.24" drill="0.9906" shape="square"/>
+<pad name="2" x="-7.62" y="12.7" drill="0.9906"/>
+<pad name="3" x="-7.62" y="10.16" drill="0.9906"/>
+<pad name="4" x="-7.62" y="7.62" drill="0.9906"/>
+<pad name="5" x="-7.62" y="5.08" drill="0.9906"/>
+<pad name="6" x="-7.62" y="2.54" drill="0.9906"/>
+<pad name="7" x="-7.62" y="0" drill="0.9906"/>
+<pad name="8" x="0" y="0" drill="0.9906"/>
+<pad name="9" x="0" y="2.54" drill="0.9906"/>
+<pad name="10" x="0" y="5.08" drill="0.9906"/>
+<pad name="11" x="0" y="7.62" drill="0.9906"/>
+<pad name="12" x="0" y="10.16" drill="0.9906"/>
+<pad name="13" x="0" y="12.7" drill="0.9906"/>
+<pad name="14" x="0" y="15.24" drill="0.9906"/>
+<wire x1="-0.508" y1="16.2052" x2="-0.508" y2="17.272" width="0.1524" layer="21"/>
 <wire x1="-0.508" y1="13.6652" x2="-0.508" y2="14.2748" width="0.1524" layer="21"/>
 <wire x1="-0.508" y1="11.1252" x2="-0.508" y2="11.7348" width="0.1524" layer="21"/>
 <wire x1="-0.508" y1="8.5852" x2="-0.508" y2="9.1948" width="0.1524" layer="21"/>
 <wire x1="-0.508" y1="6.0452" x2="-0.508" y2="6.6548" width="0.1524" layer="21"/>
-<wire x1="-6.858" y1="-0.762" x2="-0.762" y2="-0.762" width="0.1524" layer="21"/>
-<wire x1="-0.508" y1="0.9652" x2="-0.508" y2="1.5748" width="0.1524" layer="21"/>
-<wire x1="-0.762" y1="18.542" x2="-3.5052" y2="18.542" width="0.1524" layer="21"/>
-<wire x1="-3.5052" y1="18.542" x2="-4.1148" y2="18.542" width="0.1524" layer="21"/>
-<wire x1="-4.1148" y1="18.542" x2="-6.5278" y2="18.542" width="0.1524" layer="21"/>
-<wire x1="-7.112" y1="16.6878" x2="-7.112" y2="16.2052" width="0.1524" layer="21"/>
-<wire x1="-7.112" y1="14.2748" x2="-7.112" y2="13.6652" width="0.1524" layer="21"/>
+<wire x1="-7.112" y1="-2.032" x2="-0.508" y2="-2.032" width="0.1524" layer="21"/>
+<wire x1="-0.508" y1="-2.032" x2="-0.508" y2="-0.9652" width="0.1524" layer="21"/>
+<wire x1="-0.508" y1="17.272" x2="-3.5052" y2="17.272" width="0.1524" layer="21"/>
+<wire x1="-3.5052" y1="17.272" x2="-4.1148" y2="17.272" width="0.1524" layer="21"/>
+<wire x1="-4.1148" y1="17.272" x2="-7.112" y2="17.272" width="0.1524" layer="21"/>
+<wire x1="-7.112" y1="17.272" x2="-7.112" y2="16.3322" width="0.1524" layer="21"/>
+<wire x1="-7.112" y1="14.1478" x2="-7.112" y2="13.6652" width="0.1524" layer="21"/>
 <wire x1="-7.112" y1="11.7348" x2="-7.112" y2="11.1252" width="0.1524" layer="21"/>
 <wire x1="-7.112" y1="9.1948" x2="-7.112" y2="8.5852" width="0.1524" layer="21"/>
 <wire x1="-7.112" y1="6.6548" x2="-7.112" y2="6.0452" width="0.1524" layer="21"/>
 <wire x1="-7.112" y1="4.1148" x2="-7.112" y2="3.5052" width="0.1524" layer="21"/>
 <wire x1="-7.112" y1="1.5748" x2="-7.112" y2="0.9652" width="0.1524" layer="21"/>
+<wire x1="-7.112" y1="-0.9652" x2="-7.112" y2="-2.032" width="0.1524" layer="21"/>
+<wire x1="-0.508" y1="0.9652" x2="-0.508" y2="1.5748" width="0.1524" layer="21"/>
 <wire x1="-0.508" y1="3.5052" x2="-0.508" y2="4.1148" width="0.1524" layer="21"/>
-<wire x1="-3.5052" y1="18.542" x2="-4.1148" y2="18.542" width="0" layer="21" curve="-180"/>
-<text x="-8.2042" y="18.6436" size="1.27" layer="21" ratio="6" rot="SR0">*</text>
-<wire x1="-7.112" y1="17.272" x2="-7.112" y2="18.288" width="0.1524" layer="51"/>
-<wire x1="-7.112" y1="18.288" x2="-8.1026" y2="18.288" width="0.1524" layer="51"/>
-<wire x1="-8.1026" y1="18.288" x2="-8.1026" y2="17.272" width="0.1524" layer="51"/>
-<wire x1="-8.1026" y1="17.272" x2="-7.112" y2="17.272" width="0.1524" layer="51"/>
+<wire x1="-3.5052" y1="17.272" x2="-4.1148" y2="17.272" width="0" layer="21" curve="-180"/>
+<text x="-8.2042" y="16.1036" size="1.27" layer="21" ratio="6" rot="SR0">*</text>
 <wire x1="-7.112" y1="14.732" x2="-7.112" y2="15.748" width="0.1524" layer="51"/>
 <wire x1="-7.112" y1="15.748" x2="-8.1026" y2="15.748" width="0.1524" layer="51"/>
 <wire x1="-8.1026" y1="15.748" x2="-8.1026" y2="14.732" width="0.1524" layer="51"/>
@@ -567,20 +563,16 @@ at 30/07/2012 11:22:31</description>
 <wire x1="-0.508" y1="14.732" x2="0.4826" y2="14.732" width="0.1524" layer="51"/>
 <wire x1="0.4826" y1="14.732" x2="0.4826" y2="15.748" width="0.1524" layer="51"/>
 <wire x1="0.4826" y1="15.748" x2="-0.508" y2="15.748" width="0.1524" layer="51"/>
-<wire x1="-0.508" y1="18.288" x2="-0.508" y2="17.272" width="0.1524" layer="51"/>
-<wire x1="-0.508" y1="17.272" x2="0.4826" y2="17.272" width="0.1524" layer="51"/>
-<wire x1="0.4826" y1="17.272" x2="0.4826" y2="18.288" width="0.1524" layer="51"/>
-<wire x1="0.4826" y1="18.288" x2="-0.508" y2="18.288" width="0.1524" layer="51"/>
-<wire x1="-7.112" y1="-0.762" x2="-0.508" y2="-0.762" width="0.1524" layer="51"/>
-<wire x1="-0.508" y1="-0.762" x2="-0.508" y2="18.542" width="0.1524" layer="51"/>
-<wire x1="-0.508" y1="18.542" x2="-3.5052" y2="18.542" width="0.1524" layer="51"/>
-<wire x1="-3.5052" y1="18.542" x2="-4.1148" y2="18.542" width="0.1524" layer="51"/>
-<wire x1="-4.1148" y1="18.542" x2="-7.112" y2="18.542" width="0.1524" layer="51"/>
-<wire x1="-7.112" y1="18.542" x2="-7.112" y2="-0.762" width="0.1524" layer="51"/>
-<wire x1="-3.5052" y1="18.542" x2="-4.1148" y2="18.542" width="0" layer="51" curve="-180"/>
-<text x="-8.2042" y="18.6436" size="1.27" layer="51" ratio="6" rot="SR0">*</text>
-<text x="-8.1026" y="19.2532" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
-<text x="-9.4742" y="-3.4036" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
+<wire x1="-7.112" y1="-2.032" x2="-0.508" y2="-2.032" width="0.1524" layer="51"/>
+<wire x1="-0.508" y1="-2.032" x2="-0.508" y2="17.272" width="0.1524" layer="51"/>
+<wire x1="-0.508" y1="17.272" x2="-3.5052" y2="17.272" width="0.1524" layer="51"/>
+<wire x1="-3.5052" y1="17.272" x2="-4.1148" y2="17.272" width="0.1524" layer="51"/>
+<wire x1="-4.1148" y1="17.272" x2="-7.112" y2="17.272" width="0.1524" layer="51"/>
+<wire x1="-7.112" y1="17.272" x2="-7.112" y2="-2.032" width="0.1524" layer="51"/>
+<wire x1="-3.5052" y1="17.272" x2="-4.1148" y2="17.272" width="0" layer="51" curve="-180"/>
+<text x="-8.2042" y="16.1036" size="1.27" layer="51" ratio="6" rot="SR0">*</text>
+<text x="-7.9502" y="18.2118" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="-9.3472" y="-4.9022" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
 </package>
 <package name="DIP254P762X432-8">
 <pad name="1" x="-7.62" y="7.62" drill="0.9906" shape="square"/>
@@ -642,29 +634,27 @@ at 30/07/2012 11:22:31</description>
 </package>
 </packages>
 <symbols>
-<symbol name="MCP3208-CI/P">
-<pin name="VDD" x="-17.78" y="17.78" length="middle" direction="pwr"/>
-<pin name="VREF" x="-17.78" y="15.24" length="middle" direction="pwr"/>
-<pin name="~CS/SHDN" x="-17.78" y="10.16" length="middle" direction="in"/>
-<pin name="DIN" x="-17.78" y="7.62" length="middle" direction="in"/>
-<pin name="CLK" x="-17.78" y="5.08" length="middle" direction="in"/>
-<pin name="CH0" x="-17.78" y="0" length="middle" direction="in"/>
-<pin name="CH1" x="-17.78" y="-2.54" length="middle" direction="in"/>
-<pin name="CH2" x="-17.78" y="-5.08" length="middle" direction="in"/>
-<pin name="CH3" x="-17.78" y="-7.62" length="middle" direction="in"/>
-<pin name="CH4" x="-17.78" y="-10.16" length="middle" direction="in"/>
-<pin name="CH5" x="-17.78" y="-12.7" length="middle" direction="in"/>
-<pin name="CH6" x="-17.78" y="-15.24" length="middle" direction="in"/>
-<pin name="CH7" x="-17.78" y="-17.78" length="middle" direction="in"/>
-<pin name="DGND" x="-17.78" y="-22.86" length="middle" direction="pas"/>
-<pin name="AGND" x="-17.78" y="-25.4" length="middle" direction="pas"/>
-<pin name="DOUT" x="17.78" y="17.78" length="middle" direction="out" rot="R180"/>
-<wire x1="-12.7" y1="22.86" x2="-12.7" y2="-30.48" width="0.4064" layer="94"/>
-<wire x1="-12.7" y1="-30.48" x2="12.7" y2="-30.48" width="0.4064" layer="94"/>
-<wire x1="12.7" y1="-30.48" x2="12.7" y2="22.86" width="0.4064" layer="94"/>
-<wire x1="12.7" y1="22.86" x2="-12.7" y2="22.86" width="0.4064" layer="94"/>
+<symbol name="MCP3204-CI/P">
+<pin name="VDD" x="-20.32" y="17.78" length="middle" direction="pwr"/>
+<pin name="VREF" x="-20.32" y="15.24" length="middle" direction="pwr"/>
+<pin name="~CS/SHDN" x="-20.32" y="10.16" length="middle" direction="in"/>
+<pin name="CLK" x="-20.32" y="7.62" length="middle" direction="in"/>
+<pin name="DIN" x="-20.32" y="5.08" length="middle" direction="in"/>
+<pin name="CH0" x="-20.32" y="0" length="middle" direction="in"/>
+<pin name="CH1" x="-20.32" y="-2.54" length="middle" direction="in"/>
+<pin name="CH2" x="-20.32" y="-5.08" length="middle" direction="in"/>
+<pin name="CH3" x="-20.32" y="-7.62" length="middle" direction="in"/>
+<pin name="NC_2" x="-20.32" y="-12.7" length="middle" direction="nc"/>
+<pin name="NC" x="-20.32" y="-15.24" length="middle" direction="nc"/>
+<pin name="DGND" x="-20.32" y="-20.32" length="middle" direction="pas"/>
+<pin name="AGND" x="-20.32" y="-22.86" length="middle" direction="pas"/>
+<pin name="DOUT" x="20.32" y="17.78" length="middle" direction="out" rot="R180"/>
+<wire x1="-15.24" y1="22.86" x2="-15.24" y2="-27.94" width="0.4064" layer="94"/>
+<wire x1="-15.24" y1="-27.94" x2="15.24" y2="-27.94" width="0.4064" layer="94"/>
+<wire x1="15.24" y1="-27.94" x2="15.24" y2="22.86" width="0.4064" layer="94"/>
+<wire x1="15.24" y1="22.86" x2="-15.24" y2="22.86" width="0.4064" layer="94"/>
 <text x="-4.7244" y="26.8986" size="2.0828" layer="95" ratio="10" rot="SR0">&gt;NAME</text>
-<text x="-6.7056" y="-35.8648" size="2.0828" layer="96" ratio="10" rot="SR0">&gt;VALUE</text>
+<text x="-5.715" y="-33.2232" size="2.0828" layer="96" ratio="10" rot="SR0">&gt;VALUE</text>
 </symbol>
 <symbol name="MCP4921-E/P">
 <pin name="VDD" x="-17.78" y="7.62" length="middle" direction="pwr"/>
@@ -684,37 +674,35 @@ at 30/07/2012 11:22:31</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="MCP3208-CI/P">
+<deviceset name="MCP3204-CI/P">
 <description>A/D Converters</description>
 <gates>
-<gate name="A" symbol="MCP3208-CI/P" x="0" y="0"/>
+<gate name="A" symbol="MCP3204-CI/P" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="DIP254P762X432-16">
+<device name="" package="DIP254P762X432-14">
 <connects>
-<connect gate="A" pin="AGND" pad="14"/>
+<connect gate="A" pin="AGND" pad="12"/>
 <connect gate="A" pin="CH0" pad="1"/>
 <connect gate="A" pin="CH1" pad="2"/>
 <connect gate="A" pin="CH2" pad="3"/>
 <connect gate="A" pin="CH3" pad="4"/>
-<connect gate="A" pin="CH4" pad="5"/>
-<connect gate="A" pin="CH5" pad="6"/>
-<connect gate="A" pin="CH6" pad="7"/>
-<connect gate="A" pin="CH7" pad="8"/>
-<connect gate="A" pin="CLK" pad="13"/>
-<connect gate="A" pin="DGND" pad="9"/>
-<connect gate="A" pin="DIN" pad="11"/>
-<connect gate="A" pin="DOUT" pad="12"/>
-<connect gate="A" pin="VDD" pad="16"/>
-<connect gate="A" pin="VREF" pad="15"/>
-<connect gate="A" pin="~CS/SHDN" pad="10"/>
+<connect gate="A" pin="CLK" pad="11"/>
+<connect gate="A" pin="DGND" pad="7"/>
+<connect gate="A" pin="DIN" pad="9"/>
+<connect gate="A" pin="DOUT" pad="10"/>
+<connect gate="A" pin="NC" pad="6"/>
+<connect gate="A" pin="NC_2" pad="5"/>
+<connect gate="A" pin="VDD" pad="14"/>
+<connect gate="A" pin="VREF" pad="13"/>
+<connect gate="A" pin="~CS/SHDN" pad="8"/>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="MPN" value="MCP3208-CI/P" constant="no"/>
-<attribute name="OC_FARNELL" value="1084269" constant="no"/>
-<attribute name="OC_NEWARK" value="58K1815" constant="no"/>
-<attribute name="PACKAGE" value="DIP-16" constant="no"/>
+<attribute name="MPN" value="MCP3204-CI/P" constant="no"/>
+<attribute name="OC_FARNELL" value="9758593" constant="no"/>
+<attribute name="OC_NEWARK" value="19C7209" constant="no"/>
+<attribute name="PACKAGE" value="DIP-14" constant="no"/>
 <attribute name="SUPPLIER" value="Microchip" constant="no"/>
 </technology>
 </technologies>
@@ -4468,11 +4456,11 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 </classes>
 <parts>
 <part name="U$1" library="SparkFun-Boards" deviceset="ARDUINO_R3_SHIELD" device=""/>
-<part name="MCP3208" library="Microchip_By_element14_Batch_1" deviceset="MCP3208-CI/P" device=""/>
+<part name="MCP3204" library="Microchip_By_element14_Batch_1" deviceset="MCP3204-CI/P" device=""/>
 <part name="MCP4921" library="Microchip_By_element14_Batch_1" deviceset="MCP4921-E/P" device=""/>
 <part name="GND1" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="AUDIO_JACK" library="SparkFun-Connectors" deviceset="AUDIO-JACK" device="PTH"/>
-<part name="A1" library="SparkFun-Connectors" deviceset="M03" device="PTH"/>
+<part name="MIC" library="SparkFun-Connectors" deviceset="M03" device="PTH"/>
 <part name="LED" library="SparkFun-LED" deviceset="LED" device="5MM"/>
 <part name="GND3" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
@@ -4492,9 +4480,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="SUPPLY9" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="GND9" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="SUPPLY11" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="GND10" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="GND11" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY12" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="GND2" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND14" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -4507,7 +4493,6 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <part name="VOLUME" library="SparkFun-Electromechanical" deviceset="TRIMPOT" device="-PTH-KNOB" value="TSR-3386"/>
 <part name="POT1" library="SparkFun-Electromechanical" deviceset="TRIMPOT" device="-PTH-KNOB" value="TSR-3386"/>
 <part name="POT2" library="SparkFun-Electromechanical" deviceset="TRIMPOT" device="-PTH-KNOB" value="TSR-3386"/>
-<part name="POT3" library="SparkFun-Electromechanical" deviceset="TRIMPOT" device="-PTH-KNOB" value="TSR-3386"/>
 </parts>
 <sheets>
 <sheet>
@@ -4515,11 +4500,11 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 </plain>
 <instances>
 <instance part="U$1" gate="G$1" x="-129.54" y="73.66"/>
-<instance part="MCP3208" gate="A" x="33.02" y="66.04"/>
+<instance part="MCP3204" gate="A" x="35.56" y="66.04"/>
 <instance part="MCP4921" gate="A" x="-101.6" y="2.54"/>
 <instance part="GND1" gate="1" x="-68.58" y="-7.62"/>
 <instance part="AUDIO_JACK" gate="G$1" x="-60.96" y="-45.72" rot="R180"/>
-<instance part="A1" gate="G$1" x="-48.26" y="55.88" smashed="yes">
+<instance part="MIC" gate="G$1" x="-48.26" y="55.88" smashed="yes">
 <attribute name="VALUE" x="-50.8" y="48.26" size="1.778" layer="96"/>
 <attribute name="NAME" x="-50.8" y="61.722" size="1.778" layer="95"/>
 </instance>
@@ -4542,9 +4527,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <instance part="SUPPLY1" gate="G$1" x="-157.48" y="66.04"/>
 <instance part="SUPPLY9" gate="G$1" x="-149.86" y="76.2"/>
 <instance part="GND9" gate="1" x="-147.32" y="43.18"/>
-<instance part="SUPPLY11" gate="G$1" x="30.48" y="-15.24"/>
 <instance part="GND10" gate="1" x="5.08" y="-33.02"/>
-<instance part="GND11" gate="1" x="30.48" y="-33.02"/>
 <instance part="SUPPLY12" gate="G$1" x="5.08" y="-15.24"/>
 <instance part="GND2" gate="1" x="12.7" y="33.02"/>
 <instance part="GND14" gate="1" x="-53.34" y="22.86"/>
@@ -4560,7 +4543,6 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <instance part="VOLUME" gate="R?" x="-48.26" y="2.54" rot="R270"/>
 <instance part="POT1" gate="R?" x="-22.86" y="-22.86" rot="R270"/>
 <instance part="POT2" gate="R?" x="5.08" y="-22.86" rot="R270"/>
-<instance part="POT3" gate="R?" x="30.48" y="-22.86" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -4572,7 +4554,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <wire x1="-68.58" y1="-2.54" x2="-68.58" y2="-5.08" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="A1" gate="G$1" pin="1"/>
+<pinref part="MIC" gate="G$1" pin="1"/>
 <pinref part="GND4" gate="1" pin="GND"/>
 <wire x1="-40.64" y1="50.8" x2="-40.64" y2="53.34" width="0.1524" layer="91"/>
 </segment>
@@ -4601,32 +4583,6 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <junction x="-147.32" y="50.8"/>
 <junction x="-147.32" y="53.34"/>
 <junction x="-147.32" y="55.88"/>
-</segment>
-<segment>
-<pinref part="GND2" gate="1" pin="GND"/>
-<wire x1="12.7" y1="35.56" x2="12.7" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="MCP3208" gate="A" pin="AGND"/>
-<wire x1="12.7" y1="40.64" x2="15.24" y2="40.64" width="0.1524" layer="91"/>
-<junction x="12.7" y="40.64"/>
-<wire x1="12.7" y1="40.64" x2="12.7" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="MCP3208" gate="A" pin="DGND"/>
-<wire x1="12.7" y1="43.18" x2="15.24" y2="43.18" width="0.1524" layer="91"/>
-<junction x="12.7" y="43.18"/>
-<wire x1="12.7" y1="43.18" x2="12.7" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="MCP3208" gate="A" pin="CH7"/>
-<wire x1="12.7" y1="48.26" x2="15.24" y2="48.26" width="0.1524" layer="91"/>
-<junction x="12.7" y="48.26"/>
-<wire x1="12.7" y1="48.26" x2="12.7" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="MCP3208" gate="A" pin="CH6"/>
-<wire x1="12.7" y1="50.8" x2="15.24" y2="50.8" width="0.1524" layer="91"/>
-<junction x="12.7" y="50.8"/>
-<wire x1="12.7" y1="50.8" x2="12.7" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="MCP3208" gate="A" pin="CH5"/>
-<wire x1="12.7" y1="53.34" x2="15.24" y2="53.34" width="0.1524" layer="91"/>
-<junction x="12.7" y="53.34"/>
-<wire x1="12.7" y1="53.34" x2="12.7" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="MCP3208" gate="A" pin="CH4"/>
-<wire x1="12.7" y1="55.88" x2="15.24" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="EXT_LED" gate="G$1" pin="2"/>
@@ -4661,17 +4617,25 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <wire x1="5.08" y1="-27.94" x2="5.08" y2="-30.48" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="POT3" gate="R?" pin="CW"/>
-<pinref part="GND11" gate="1" pin="GND"/>
-<wire x1="30.48" y1="-27.94" x2="30.48" y2="-30.48" width="0.1524" layer="91"/>
+<pinref part="GND2" gate="1" pin="GND"/>
+<wire x1="12.7" y1="35.56" x2="12.7" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="MCP3204" gate="A" pin="AGND"/>
+<wire x1="12.7" y1="43.18" x2="15.24" y2="43.18" width="0.1524" layer="91"/>
+<junction x="12.7" y="43.18"/>
+<wire x1="12.7" y1="43.18" x2="12.7" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="MCP3204" gate="A" pin="DGND"/>
+<wire x1="12.7" y1="45.72" x2="15.24" y2="45.72" width="0.1524" layer="91"/>
+<junction x="12.7" y="45.72"/>
+<wire x1="12.7" y1="45.72" x2="12.7" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="MCP3204" gate="A" pin="CH3"/>
+<wire x1="12.7" y1="58.42" x2="15.24" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="5V" class="0">
 <segment>
 <pinref part="SUPPLY3" gate="G$1" pin="5V"/>
-<wire x1="12.7" y1="88.9" x2="12.7" y2="83.82" width="0.1524" layer="91"/>
-<pinref part="MCP3208" gate="A" pin="VDD"/>
-<wire x1="12.7" y1="83.82" x2="15.24" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="88.9" x2="15.24" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="MCP3204" gate="A" pin="VDD"/>
 </segment>
 <segment>
 <pinref part="SUPPLY4" gate="G$1" pin="5V"/>
@@ -4695,7 +4659,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <segment>
 <pinref part="SUPPLY6" gate="G$1" pin="3.3V"/>
 <wire x1="5.08" y1="88.9" x2="5.08" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="MCP3208" gate="A" pin="VREF"/>
+<pinref part="MCP3204" gate="A" pin="VREF"/>
 <wire x1="5.08" y1="81.28" x2="15.24" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -4705,7 +4669,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <wire x1="-127" y1="5.08" x2="-119.38" y2="5.08" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="A1" gate="G$1" pin="3"/>
+<pinref part="MIC" gate="G$1" pin="3"/>
 <pinref part="SUPPLY7" gate="G$1" pin="3.3V"/>
 <wire x1="-40.64" y1="58.42" x2="-40.64" y2="60.96" width="0.1524" layer="91"/>
 </segment>
@@ -4724,11 +4688,6 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <pinref part="SUPPLY12" gate="G$1" pin="3.3V"/>
 <pinref part="POT2" gate="R?" pin="CCW"/>
 <wire x1="5.08" y1="-15.24" x2="5.08" y2="-17.78" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="SUPPLY11" gate="G$1" pin="3.3V"/>
-<pinref part="POT3" gate="R?" pin="CCW"/>
-<wire x1="30.48" y1="-15.24" x2="30.48" y2="-17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -4755,8 +4714,8 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <segment>
 <pinref part="U$1" gate="G$1" pin="D13"/>
 <wire x1="-116.84" y1="55.88" x2="-78.74" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="MCP3208" gate="A" pin="CLK"/>
-<wire x1="15.24" y1="71.12" x2="-78.74" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="MCP3204" gate="A" pin="CLK"/>
+<wire x1="15.24" y1="73.66" x2="-78.74" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="-78.74" y1="71.12" x2="-78.74" y2="55.88" width="0.1524" layer="91"/>
 <junction x="-78.74" y="55.88"/>
 <pinref part="MCP4921" gate="A" pin="SCK"/>
@@ -4768,10 +4727,10 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 </net>
 <net name="AUD" class="0">
 <segment>
-<pinref part="A1" gate="G$1" pin="2"/>
+<pinref part="MIC" gate="G$1" pin="2"/>
 <wire x1="-40.64" y1="55.88" x2="-35.56" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="-35.56" y1="55.88" x2="-35.56" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="MCP3208" gate="A" pin="CH0"/>
+<pinref part="MCP3204" gate="A" pin="CH0"/>
 <wire x1="-35.56" y1="66.04" x2="15.24" y2="66.04" width="0.1524" layer="91"/>
 <label x="-33.02" y="66.04" size="1.778" layer="95"/>
 </segment>
@@ -4781,9 +4740,9 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <pinref part="U$1" gate="G$1" pin="D12"/>
 <wire x1="-116.84" y1="58.42" x2="-81.28" y2="58.42" width="0.1524" layer="91"/>
 <junction x="-81.28" y="58.42"/>
-<pinref part="MCP3208" gate="A" pin="DOUT"/>
-<wire x1="50.8" y1="83.82" x2="50.8" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="96.52" x2="-81.28" y2="96.52" width="0.1524" layer="91"/>
+<pinref part="MCP3204" gate="A" pin="DOUT"/>
+<wire x1="55.88" y1="83.82" x2="55.88" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="96.52" x2="-81.28" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="-81.28" y1="96.52" x2="-81.28" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -4793,8 +4752,8 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <wire x1="-134.62" y1="40.64" x2="-134.62" y2="-2.54" width="0.1524" layer="91"/>
 <pinref part="MCP4921" gate="A" pin="SDI"/>
 <wire x1="-134.62" y1="-2.54" x2="-119.38" y2="-2.54" width="0.1524" layer="91"/>
-<pinref part="MCP3208" gate="A" pin="DIN"/>
-<wire x1="15.24" y1="73.66" x2="-83.82" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="MCP3204" gate="A" pin="DIN"/>
+<wire x1="15.24" y1="71.12" x2="-83.82" y2="73.66" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="*D11"/>
 <wire x1="-116.84" y1="60.96" x2="-83.82" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="-83.82" y1="60.96" x2="-83.82" y2="73.66" width="0.1524" layer="91"/>
@@ -4815,7 +4774,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 </net>
 <net name="CS_ADC" class="0">
 <segment>
-<pinref part="MCP3208" gate="A" pin="~CS/SHDN"/>
+<pinref part="MCP3204" gate="A" pin="~CS/SHDN"/>
 <wire x1="15.24" y1="76.2" x2="-96.52" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="-96.52" y1="76.2" x2="-96.52" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="*D10"/>
@@ -4915,7 +4874,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <label x="-17.78" y="-22.86" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="MCP3208" gate="A" pin="CH1"/>
+<pinref part="MCP3204" gate="A" pin="CH1"/>
 <wire x1="15.24" y1="63.5" x2="-7.62" y2="63.5" width="0.1524" layer="91"/>
 <label x="-7.62" y="63.5" size="1.778" layer="95"/>
 </segment>
@@ -4927,21 +4886,9 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <label x="10.16" y="-22.86" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="MCP3208" gate="A" pin="CH2"/>
+<pinref part="MCP3204" gate="A" pin="CH2"/>
 <wire x1="15.24" y1="60.96" x2="-7.62" y2="60.96" width="0.1524" layer="91"/>
 <label x="-7.62" y="60.96" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="POT3_INPUT" class="0">
-<segment>
-<pinref part="POT3" gate="R?" pin="WIPER"/>
-<wire x1="35.56" y1="-22.86" x2="48.26" y2="-22.86" width="0.1524" layer="91"/>
-<label x="35.56" y="-22.86" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="MCP3208" gate="A" pin="CH3"/>
-<wire x1="15.24" y1="58.42" x2="-7.62" y2="58.42" width="0.1524" layer="91"/>
-<label x="-7.62" y="58.42" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
