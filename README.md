@@ -8,9 +8,7 @@ This is the official Arduino library for the Ultimate Voice Changer Arduino Shie
 
 Eagle schematics and board layout for an Arduino Uno shield are included in this repository.
 
-I also sell kits on Tindie if you don't want to build your own PCB.
-
-https://www.tindie.com/products/andygrove73/ultimate-voice-changer-arduino-shield-2/
+You can also purchase easy-to-assemble kits online from http://ultimatevoicechanger.com
 
 ## Example sketches
 
