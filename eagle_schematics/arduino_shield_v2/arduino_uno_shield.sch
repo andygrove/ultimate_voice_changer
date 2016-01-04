@@ -749,11 +749,6 @@ We've spent an enormous amount of time creating and checking these footprints an
 &lt;br&gt;&lt;br&gt;
 You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
 <packages>
-<package name="CREATIVE_COMMONS">
-<text x="-20.32" y="5.08" size="1.778" layer="51">Released under the Creative Commons Attribution Share-Alike 4.0 License</text>
-<text x="0" y="2.54" size="1.778" layer="51"> https://creativecommons.org/licenses/by-sa/4.0/</text>
-<text x="11.43" y="0" size="1.778" layer="51">Designed by:</text>
-</package>
 </packages>
 <symbols>
 <symbol name="3.3V">
@@ -772,44 +767,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
 <text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
-</symbol>
-<symbol name="LETTER_L">
-<wire x1="0" y1="185.42" x2="248.92" y2="185.42" width="0.4064" layer="94"/>
-<wire x1="248.92" y1="185.42" x2="248.92" y2="0" width="0.4064" layer="94"/>
-<wire x1="0" y1="185.42" x2="0" y2="0" width="0.4064" layer="94"/>
-<wire x1="0" y1="0" x2="248.92" y2="0" width="0.4064" layer="94"/>
-</symbol>
-<symbol name="DOCFIELD">
-<wire x1="0" y1="0" x2="71.12" y2="0" width="0.254" layer="94"/>
-<wire x1="101.6" y1="15.24" x2="87.63" y2="15.24" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="0" y2="5.08" width="0.254" layer="94"/>
-<wire x1="0" y1="5.08" x2="71.12" y2="5.08" width="0.254" layer="94"/>
-<wire x1="0" y1="5.08" x2="0" y2="15.24" width="0.254" layer="94"/>
-<wire x1="101.6" y1="15.24" x2="101.6" y2="5.08" width="0.254" layer="94"/>
-<wire x1="71.12" y1="5.08" x2="71.12" y2="0" width="0.254" layer="94"/>
-<wire x1="71.12" y1="5.08" x2="87.63" y2="5.08" width="0.254" layer="94"/>
-<wire x1="71.12" y1="0" x2="101.6" y2="0" width="0.254" layer="94"/>
-<wire x1="87.63" y1="15.24" x2="87.63" y2="5.08" width="0.254" layer="94"/>
-<wire x1="87.63" y1="15.24" x2="0" y2="15.24" width="0.254" layer="94"/>
-<wire x1="87.63" y1="5.08" x2="101.6" y2="5.08" width="0.254" layer="94"/>
-<wire x1="101.6" y1="5.08" x2="101.6" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="15.24" x2="0" y2="22.86" width="0.254" layer="94"/>
-<wire x1="101.6" y1="35.56" x2="0" y2="35.56" width="0.254" layer="94"/>
-<wire x1="101.6" y1="35.56" x2="101.6" y2="22.86" width="0.254" layer="94"/>
-<wire x1="0" y1="22.86" x2="101.6" y2="22.86" width="0.254" layer="94"/>
-<wire x1="0" y1="22.86" x2="0" y2="35.56" width="0.254" layer="94"/>
-<wire x1="101.6" y1="22.86" x2="101.6" y2="15.24" width="0.254" layer="94"/>
-<text x="1.27" y="1.27" size="2.54" layer="94" font="vector">Date:</text>
-<text x="12.7" y="1.27" size="2.54" layer="94" font="vector">&gt;LAST_DATE_TIME</text>
-<text x="72.39" y="1.27" size="2.54" layer="94" font="vector">Sheet:</text>
-<text x="86.36" y="1.27" size="2.54" layer="94" font="vector">&gt;SHEET</text>
-<text x="88.9" y="11.43" size="2.54" layer="94" font="vector">REV:</text>
-<text x="1.524" y="17.78" size="2.54" layer="94" font="vector">TITLE:</text>
-<text x="15.494" y="17.78" size="2.7432" layer="94" font="vector">&gt;DRAWING_NAME</text>
-<text x="2.54" y="31.75" size="1.9304" layer="94">Released under the Creative Commons</text>
-<text x="2.54" y="27.94" size="1.9304" layer="94">Attribution Share-Alike 4.0 License</text>
-<text x="2.54" y="24.13" size="1.9304" layer="94"> https://creativecommons.org/licenses/by-sa/4.0/</text>
-<text x="1.27" y="11.43" size="2.54" layer="94">Design by:</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -845,21 +802,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </gates>
 <devices>
 <device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="FRAME-LETTER" prefix="FRAME">
-<description>&lt;b&gt;Schematic Frame&lt;/b&gt;&lt;p&gt;
-Standard 8.5x11 US Letter frame</description>
-<gates>
-<gate name="G$1" symbol="LETTER_L" x="0" y="0"/>
-<gate name="G$2" symbol="DOCFIELD" x="147.32" y="0" addlevel="must"/>
-</gates>
-<devices>
-<device name="" package="CREATIVE_COMMONS">
 <technologies>
 <technology name=""/>
 </technologies>
@@ -4485,7 +4427,6 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <part name="GND2" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND14" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="EXT_LED" library="SparkFun-Connectors" deviceset="M02" device="3.5MM"/>
-<part name="FRAME3" library="SparkFun-Aesthetics" deviceset="FRAME-LETTER" device=""/>
 <part name="IC1" library="linear" deviceset="TL072" device="P"/>
 <part name="SUPPLY15" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="C2" library="SparkFun-Capacitors" deviceset="CAP_POL" device="PTH1" value="100uF"/>
@@ -4504,9 +4445,9 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <instance part="MCP4921" gate="A" x="-101.6" y="2.54"/>
 <instance part="GND1" gate="1" x="-68.58" y="-7.62"/>
 <instance part="AUDIO_JACK" gate="G$1" x="-60.96" y="-45.72" rot="R180"/>
-<instance part="MIC" gate="G$1" x="-48.26" y="55.88" smashed="yes">
-<attribute name="VALUE" x="-50.8" y="48.26" size="1.778" layer="96"/>
-<attribute name="NAME" x="-50.8" y="61.722" size="1.778" layer="95"/>
+<instance part="MIC" gate="G$1" x="-40.64" y="55.88" smashed="yes">
+<attribute name="VALUE" x="-43.18" y="48.26" size="1.778" layer="96"/>
+<attribute name="NAME" x="-43.18" y="61.722" size="1.778" layer="95"/>
 </instance>
 <instance part="LED" gate="G$1" x="-63.5" y="50.8"/>
 <instance part="GND3" gate="1" x="-63.5" y="40.64"/>
@@ -4514,8 +4455,8 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <instance part="SUPPLY4" gate="G$1" x="-121.92" y="15.24"/>
 <instance part="SUPPLY5" gate="G$1" x="-127" y="15.24"/>
 <instance part="SUPPLY6" gate="G$1" x="5.08" y="88.9"/>
-<instance part="SUPPLY7" gate="G$1" x="-40.64" y="60.96"/>
-<instance part="GND4" gate="1" x="-40.64" y="48.26"/>
+<instance part="SUPPLY7" gate="G$1" x="-30.48" y="63.5"/>
+<instance part="GND4" gate="1" x="-25.4" y="43.18"/>
 <instance part="SUPPLY8" gate="G$1" x="-22.86" y="-15.24"/>
 <instance part="GND5" gate="1" x="-22.86" y="-33.02"/>
 <instance part="R1" gate="G$1" x="-76.2" y="10.16"/>
@@ -4532,8 +4473,6 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <instance part="GND2" gate="1" x="12.7" y="33.02"/>
 <instance part="GND14" gate="1" x="-53.34" y="22.86"/>
 <instance part="EXT_LED" gate="G$1" x="-63.5" y="30.48" rot="MR180"/>
-<instance part="FRAME3" gate="G$1" x="-170.18" y="-78.74"/>
-<instance part="FRAME3" gate="G$2" x="-22.86" y="-78.74"/>
 <instance part="IC1" gate="A" x="-121.92" y="-45.72"/>
 <instance part="IC1" gate="B" x="-99.06" y="-45.72"/>
 <instance part="IC1" gate="P" x="-99.06" y="-45.72"/>
@@ -4552,11 +4491,6 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <pinref part="C1" gate="G$1" pin="2"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 <wire x1="-68.58" y1="-2.54" x2="-68.58" y2="-5.08" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="MIC" gate="G$1" pin="1"/>
-<pinref part="GND4" gate="1" pin="GND"/>
-<wire x1="-40.64" y1="50.8" x2="-40.64" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="MCP4921" gate="A" pin="AVSS"/>
@@ -4630,6 +4564,12 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <pinref part="MCP3204" gate="A" pin="CH3"/>
 <wire x1="12.7" y1="58.42" x2="15.24" y2="58.42" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="MIC" gate="G$1" pin="2"/>
+<wire x1="-33.02" y1="55.88" x2="-25.4" y2="55.88" width="0.1524" layer="91"/>
+<pinref part="GND4" gate="1" pin="GND"/>
+<wire x1="-25.4" y1="55.88" x2="-25.4" y2="45.72" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="5V" class="0">
 <segment>
@@ -4669,11 +4609,6 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <wire x1="-127" y1="5.08" x2="-119.38" y2="5.08" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="MIC" gate="G$1" pin="3"/>
-<pinref part="SUPPLY7" gate="G$1" pin="3.3V"/>
-<wire x1="-40.64" y1="58.42" x2="-40.64" y2="60.96" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="SUPPLY1" gate="G$1" pin="3.3V"/>
 <wire x1="-157.48" y1="66.04" x2="-157.48" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="3.3V"/>
@@ -4688,6 +4623,12 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <pinref part="SUPPLY12" gate="G$1" pin="3.3V"/>
 <pinref part="POT2" gate="R?" pin="CCW"/>
 <wire x1="5.08" y1="-15.24" x2="5.08" y2="-17.78" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="MIC" gate="G$1" pin="1"/>
+<wire x1="-33.02" y1="53.34" x2="-30.48" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="SUPPLY7" gate="G$1" pin="3.3V"/>
+<wire x1="-30.48" y1="53.34" x2="-30.48" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -4723,16 +4664,6 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <wire x1="-132.08" y1="0" x2="-132.08" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="-132.08" y1="38.1" x2="-78.74" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="-78.74" y1="38.1" x2="-78.74" y2="55.88" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="AUD" class="0">
-<segment>
-<pinref part="MIC" gate="G$1" pin="2"/>
-<wire x1="-40.64" y1="55.88" x2="-35.56" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="-35.56" y1="55.88" x2="-35.56" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="MCP3204" gate="A" pin="CH0"/>
-<wire x1="-35.56" y1="66.04" x2="15.24" y2="66.04" width="0.1524" layer="91"/>
-<label x="-33.02" y="66.04" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SPI_MISO" class="0">
@@ -4889,6 +4820,16 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <pinref part="MCP3204" gate="A" pin="CH2"/>
 <wire x1="15.24" y1="60.96" x2="-7.62" y2="60.96" width="0.1524" layer="91"/>
 <label x="-7.62" y="60.96" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="MIC" class="0">
+<segment>
+<pinref part="MIC" gate="G$1" pin="3"/>
+<wire x1="-33.02" y1="58.42" x2="-17.78" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="58.42" x2="-17.78" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="MCP3204" gate="A" pin="CH0"/>
+<wire x1="-17.78" y1="66.04" x2="15.24" y2="66.04" width="0.1524" layer="91"/>
+<label x="-7.62" y="66.04" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
