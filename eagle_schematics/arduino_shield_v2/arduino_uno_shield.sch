@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="7.1.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -4418,7 +4418,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <part name="GND6" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND7" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND8" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="R3" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="330"/>
+<part name="R2" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="330"/>
 <part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="SUPPLY9" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="GND9" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -4427,7 +4427,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <part name="GND2" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND14" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="EXT_LED" library="SparkFun-Connectors" deviceset="M02" device="3.5MM"/>
-<part name="IC1" library="linear" deviceset="TL072" device="P"/>
+<part name="IC1" library="linear" deviceset="TL072" device="P" value="TLV2462CP"/>
 <part name="SUPPLY15" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="C2" library="SparkFun-Capacitors" deviceset="CAP_POL" device="PTH1" value="100uF"/>
 <part name="GND15" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -4464,7 +4464,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <instance part="GND6" gate="1" x="-99.06" y="-63.5"/>
 <instance part="GND7" gate="1" x="-48.26" y="-7.62"/>
 <instance part="GND8" gate="1" x="-121.92" y="-17.78"/>
-<instance part="R3" gate="G$1" x="-63.5" y="58.42" rot="R90"/>
+<instance part="R2" gate="G$1" x="-63.5" y="58.42" rot="R90"/>
 <instance part="SUPPLY1" gate="G$1" x="-157.48" y="66.04"/>
 <instance part="SUPPLY9" gate="G$1" x="-149.86" y="76.2"/>
 <instance part="GND9" gate="1" x="-147.32" y="43.18"/>
@@ -4726,7 +4726,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <net name="N$10" class="0">
 <segment>
 <pinref part="LED" gate="G$1" pin="A"/>
-<pinref part="R3" gate="G$1" pin="1"/>
+<pinref part="R2" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$12" class="0">
@@ -4735,7 +4735,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <wire x1="-116.84" y1="73.66" x2="-91.44" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="-91.44" y1="73.66" x2="-91.44" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="-91.44" y1="66.04" x2="-63.5" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="R3" gate="G$1" pin="2"/>
+<pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="-63.5" y1="66.04" x2="-63.5" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="EXT_LED" gate="G$1" pin="1"/>
 <wire x1="-55.88" y1="30.48" x2="-53.34" y2="30.48" width="0.1524" layer="91"/>

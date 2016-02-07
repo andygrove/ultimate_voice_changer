@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="7.1.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -138,10 +138,10 @@
 <wire x1="53.01" y1="20.32" x2="53.01" y2="77.46" width="0" layer="20"/>
 <wire x1="53.01" y1="77.46" x2="0" y2="77.46" width="0" layer="20"/>
 <wire x1="0" y1="77.46" x2="0" y2="20.32" width="0" layer="20"/>
-<text x="26.67" y="71.12" size="0.8128" layer="21">GND</text>
-<text x="30.48" y="71.12" size="0.8128" layer="21">IN</text>
-<text x="24.13" y="71.12" size="0.8128" layer="21">3V</text>
-<text x="13.97" y="73.66" size="1.27" layer="21">Ultimate Voice Changer v2.0.0</text>
+<text x="25.4" y="71.12" size="0.8128" layer="21" font="vector" ratio="15">GND</text>
+<text x="29.21" y="71.12" size="0.8128" layer="21" font="vector" ratio="15">IN</text>
+<text x="22.86" y="71.12" size="0.8128" layer="21" font="vector" ratio="15">3V</text>
+<text x="13.97" y="73.66" size="1.27" layer="21" font="vector" ratio="20">Ultimate Voice Changer v2.0.0</text>
 </plain>
 <libraries>
 <library name="SparkFun-Connectors">
@@ -857,13 +857,16 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="AUDIO_JACK" library="SparkFun-Connectors" package="AUDIO-JACK" value="" x="44.45" y="24.13" rot="R90"/>
+<element name="AUDIO_JACK" library="SparkFun-Connectors" package="AUDIO-JACK" value="" x="44.45" y="24.13" smashed="yes" rot="R90">
+<attribute name="NAME" x="50.8" y="33.02" size="0.8128" layer="25" font="vector" ratio="15" rot="R180"/>
+<attribute name="VALUE" x="43.18" y="22.86" size="0.4064" layer="27" rot="R90"/>
+</element>
 <element name="C1" library="SparkFun-Passives" package="CAP-PTH-SMALL" value="0.1uF" x="31.75" y="50.8" smashed="yes" rot="R270">
-<attribute name="NAME" x="33.02" y="51.562" size="1.27" layer="25" rot="R270"/>
-<attribute name="VALUE" x="28.956" y="51.816" size="1.27" layer="21" rot="R270"/>
+<attribute name="NAME" x="33.02" y="49.022" size="0.8128" layer="25" rot="R270"/>
+<attribute name="VALUE" x="32.766" y="53.086" size="0.8128" layer="21" rot="R270"/>
 </element>
 <element name="LED" library="SparkFun-LED" package="LED5MM" value="" x="12.7" y="33.02" smashed="yes" rot="R90">
-<attribute name="NAME" x="14.7066" y="37.465" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="NAME" x="10.8966" y="36.195" size="0.8128" layer="25" font="vector" ratio="15" rot="R180"/>
 <attribute name="VALUE" x="14.5034" y="36.2204" size="1.27" layer="27" ratio="10" rot="R90"/>
 </element>
 <element name="MCP3204" library="Microchip_By_element14_Batch_1" package="DIP254P762X432-14" value="MCP3204-CI/P" x="8.89" y="71.12" smashed="yes" rot="R180">
@@ -872,7 +875,7 @@ design rules under a new name.</description>
 <attribute name="MPN" value="MCP3204-CI/P" x="8.89" y="71.12" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="SUPPLIER" value="Microchip" x="8.89" y="71.12" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="OC_FARNELL" value="9758593" x="8.89" y="71.12" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="13.1826" y="58.2168" size="1.27" layer="25" ratio="10" rot="SR90"/>
+<attribute name="NAME" x="13.1826" y="60.7568" size="0.8128" layer="25" font="vector" ratio="15" rot="SR90"/>
 </element>
 <element name="MCP4921" library="Microchip_By_element14_Batch_1" package="DIP254P762X432-8" value="MCP4921-E/P" x="16.51" y="43.18" smashed="yes">
 <attribute name="PACKAGE" value="DIP-8" x="16.51" y="43.18" size="1.778" layer="27" display="off"/>
@@ -880,26 +883,39 @@ design rules under a new name.</description>
 <attribute name="MPN" value="MCP4921-E/P" x="16.51" y="43.18" size="1.778" layer="27" display="off"/>
 <attribute name="SUPPLIER" value="Microchip" x="16.51" y="43.18" size="1.778" layer="27" display="off"/>
 <attribute name="OC_FARNELL" value="1332112" x="16.51" y="43.18" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="12.2682" y="50.0888" size="1.27" layer="25" ratio="10" rot="SR270"/>
+<attribute name="NAME" x="12.2682" y="50.0888" size="0.8128" layer="25" font="vector" ratio="15" rot="SR270"/>
 </element>
 <element name="MIC" library="SparkFun-Connectors" package="1X03" value="" x="24.13" y="68.58" smashed="yes">
-<attribute name="NAME" x="18.9738" y="67.8688" size="1.27" layer="25" ratio="10"/>
+<attribute name="NAME" x="20.2438" y="69.1388" size="0.8128" layer="25" font="vector" ratio="15"/>
 <attribute name="VALUE" x="22.86" y="65.405" size="1.27" layer="27"/>
 </element>
-<element name="R1" library="SparkFun-Passives" package="AXIAL-0.4" value="1.5K" x="24.13" y="50.8"/>
-<element name="R3" library="SparkFun-Passives" package="AXIAL-0.4" value="330" x="12.7" y="39.37" rot="R180"/>
+<element name="R1" library="SparkFun-Passives" package="AXIAL-0.4" value="1.5K" x="24.13" y="50.8" smashed="yes">
+<attribute name="NAME" x="20.955" y="52.705" size="0.8128" layer="25" font="vector" ratio="15"/>
+<attribute name="VALUE" x="21.844" y="50.419" size="0.8128" layer="21" font="vector" ratio="15"/>
+</element>
+<element name="R2" library="SparkFun-Passives" package="AXIAL-0.4" value="330" x="12.7" y="39.37" rot="R180"/>
 <element name="U$1" library="SparkFun-Boards" package="UNO_R3_SHIELD" value="ARDUINO_R3_SHIELD" x="0" y="20.32"/>
-<element name="EXT_LED" library="SparkFun-Connectors" package="SCREWTERMINAL-3.5MM-2" value="M023.5MM" x="11.43" y="24.13"/>
-<element name="IC1" library="linear" package="DIL08" value="TL072P" x="27.94" y="40.64"/>
-<element name="C2" library="SparkFun-Capacitors" package="CPOL-RADIAL-100UF-25V" value="100uF" x="40.64" y="38.1"/>
-<element name="VOLUME" library="SparkFun-Electromechanical" package="3386U" value="TSR-3386" x="27.94" y="25.4">
+<element name="EXT_LED" library="SparkFun-Connectors" package="SCREWTERMINAL-3.5MM-2" value="M023.5MM" x="11.43" y="24.13" smashed="yes">
+<attribute name="NAME" x="10.16" y="27.94" size="0.8128" layer="25" font="vector" ratio="15"/>
+</element>
+<element name="IC1" library="linear" package="DIL08" value="TLV2462CP" x="27.94" y="40.64" smashed="yes">
+<attribute name="VALUE" x="25.654" y="40.005" size="0.8128" layer="21" font="vector" ratio="15"/>
+</element>
+<element name="C2" library="SparkFun-Capacitors" package="CPOL-RADIAL-100UF-25V" value="100uF" x="40.64" y="38.1" smashed="yes">
+<attribute name="VALUE" x="38.735" y="33.782" size="0.8128" layer="21" font="vector" ratio="15"/>
+<attribute name="NAME" x="39.878" y="39.751" size="0.8128" layer="25" font="vector" ratio="15"/>
+</element>
+<element name="VOLUME" library="SparkFun-Electromechanical" package="3386U" value="TSR-3386" x="27.94" y="25.4" smashed="yes">
 <attribute name="PROD_ID" value="RES-09730" x="27.94" y="25.4" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="26.67" y="31.75" size="0.8128" layer="25" font="vector" ratio="15"/>
 </element>
-<element name="POT1" library="SparkFun-Electromechanical" package="3386U" value="TSR-3386" x="40.64" y="66.04">
+<element name="POT1" library="SparkFun-Electromechanical" package="3386U" value="TSR-3386" x="40.64" y="66.04" smashed="yes">
 <attribute name="PROD_ID" value="RES-09730" x="40.64" y="66.04" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="35.56" y="59.69" size="0.8128" layer="25" font="vector" ratio="15"/>
 </element>
-<element name="POT2" library="SparkFun-Electromechanical" package="3386U" value="TSR-3386" x="40.64" y="52.07">
+<element name="POT2" library="SparkFun-Electromechanical" package="3386U" value="TSR-3386" x="40.64" y="52.07" smashed="yes">
 <attribute name="PROD_ID" value="RES-09730" x="40.64" y="52.07" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="35.56" y="45.72" size="0.8128" layer="25" font="vector" ratio="15"/>
 </element>
 </elements>
 <signals>
@@ -1134,7 +1150,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$10">
 <contactref element="LED" pad="A"/>
-<contactref element="R3" pad="P$1"/>
+<contactref element="R2" pad="P$1"/>
 <wire x1="12.8016" y1="32.4612" x2="12.8016" y2="31.7754" width="0.254" layer="1"/>
 <wire x1="17.6022" y1="37.2618" x2="12.8016" y2="32.4612" width="0.254" layer="1"/>
 <wire x1="17.6022" y1="39.3192" x2="17.6022" y2="37.2618" width="0.254" layer="1"/>
@@ -1143,7 +1159,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$12">
 <contactref element="U$1" pad="D6"/>
-<contactref element="R3" pad="P$2"/>
+<contactref element="R2" pad="P$2"/>
 <contactref element="EXT_LED" pad="1"/>
 <wire x1="7.7724" y1="27.8892" x2="7.7724" y2="39.3192" width="0.254" layer="1"/>
 <wire x1="11.43" y1="24.2316" x2="7.7724" y2="27.8892" width="0.254" layer="1"/>
