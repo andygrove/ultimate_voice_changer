@@ -4501,7 +4501,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <part name="R1" library="SparkFun-Resistors" deviceset="1KOHM-1/4W-5%(PTH)" device="" value="330"/>
 <part name="R2" library="SparkFun-Resistors" deviceset="1KOHM-1/4W-5%(PTH)" device="" value="1.5k"/>
 <part name="R3" library="SparkFun-Resistors" deviceset="1KOHM-1/4W-5%(PTH)" device="" value="1k"/>
-<part name="LED1" library="SparkFun-LED" deviceset="LED" device="5MM"/>
+<part name="LED" library="SparkFun-LED" deviceset="LED" device="5MM"/>
 <part name="C1" library="SparkFun-Capacitors" deviceset="CAP" device="PTH1" value="0.1uF"/>
 <part name="C2" library="SparkFun-Capacitors" deviceset="CAP_POL" device="PTH2" value="10uF"/>
 <part name="GND1" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -4526,7 +4526,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <instance part="R1" gate="G$1" x="5.08" y="33.02"/>
 <instance part="R2" gate="G$1" x="104.14" y="86.36"/>
 <instance part="R3" gate="G$1" x="124.46" y="78.74" rot="R90"/>
-<instance part="LED1" gate="G$1" x="17.78" y="33.02" rot="R90"/>
+<instance part="LED" gate="G$1" x="17.78" y="33.02" rot="R90"/>
 <instance part="C1" gate="G$1" x="111.76" y="78.74"/>
 <instance part="C2" gate="G$1" x="116.84" y="86.36" rot="R90"/>
 <instance part="GND1" gate="1" x="111.76" y="66.04"/>
@@ -4546,13 +4546,13 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <net name="N$1" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
-<pinref part="LED1" gate="G$1" pin="A"/>
+<pinref part="LED" gate="G$1" pin="A"/>
 <wire x1="10.16" y1="33.02" x2="15.24" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="LED1" gate="G$1" pin="C"/>
+<pinref part="LED" gate="G$1" pin="C"/>
 <wire x1="22.86" y1="33.02" x2="27.94" y2="33.02" width="0.1524" layer="91"/>
 <label x="27.94" y="33.02" size="1.778" layer="95"/>
 </segment>
