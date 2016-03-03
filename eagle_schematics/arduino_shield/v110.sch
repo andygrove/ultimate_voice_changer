@@ -4508,7 +4508,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <part name="GND2" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="JP1" library="SparkFun-Connectors" deviceset="AUDIO-JACK" device="PTH"/>
 <part name="GND3" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="MIC" library="SparkFun-Connectors" deviceset="M03" device="LOCK"/>
+<part name="ADC1_MIC" library="SparkFun-Connectors" deviceset="M03" device="LOCK"/>
 <part name="EXT_LED" library="SparkFun-Connectors" deviceset="M02" device="LOCK"/>
 <part name="R4" library="SparkFun-Resistors" deviceset="1KOHM-1/4W-5%(PTH)" device=""/>
 <part name="ADC2" library="SparkFun-Electromechanical" deviceset="TRIMPOT" device="-PTH-KNOB"/>
@@ -4533,7 +4533,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <instance part="GND2" gate="1" x="124.46" y="66.04"/>
 <instance part="JP1" gate="G$1" x="142.24" y="83.82" rot="R180"/>
 <instance part="GND3" gate="1" x="134.62" y="66.04"/>
-<instance part="MIC" gate="G$1" x="-5.08" y="15.24"/>
+<instance part="ADC1_MIC" gate="G$1" x="-5.08" y="15.24"/>
 <instance part="EXT_LED" gate="G$1" x="40.64" y="17.78" rot="R180"/>
 <instance part="R4" gate="G$1" x="25.4" y="17.78"/>
 <instance part="ADC2" gate="R?" x="-5.08" y="-7.62"/>
@@ -4593,7 +4593,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <wire x1="134.62" y1="81.28" x2="134.62" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="MIC" gate="G$1" pin="2"/>
+<pinref part="ADC1_MIC" gate="G$1" pin="2"/>
 <wire x1="2.54" y1="15.24" x2="10.16" y2="15.24" width="0.1524" layer="91"/>
 <label x="2.54" y="15.24" size="1.778" layer="95"/>
 </segment>
@@ -4751,7 +4751,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <label x="53.34" y="81.28" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="MIC" gate="G$1" pin="3"/>
+<pinref part="ADC1_MIC" gate="G$1" pin="3"/>
 <wire x1="2.54" y1="17.78" x2="10.16" y2="17.78" width="0.1524" layer="91"/>
 <label x="2.54" y="17.78" size="1.778" layer="95"/>
 </segment>
@@ -4778,7 +4778,7 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <label x="50.8" y="15.24" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="MIC" gate="G$1" pin="1"/>
+<pinref part="ADC1_MIC" gate="G$1" pin="1"/>
 <wire x1="2.54" y1="12.7" x2="10.16" y2="12.7" width="0.1524" layer="91"/>
 <label x="2.54" y="12.7" size="1.778" layer="95"/>
 </segment>
