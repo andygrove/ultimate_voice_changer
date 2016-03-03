@@ -126,9 +126,9 @@
 </layers>
 <board>
 <plain>
-<wire x1="3.81" y1="17.78" x2="58.09" y2="17.78" width="0" layer="20"/>
-<wire x1="58.09" y1="17.78" x2="58.09" y2="77.46" width="0" layer="20"/>
-<wire x1="58.09" y1="77.46" x2="3.81" y2="77.46" width="0" layer="20"/>
+<wire x1="3.81" y1="17.78" x2="56.82" y2="17.78" width="0" layer="20"/>
+<wire x1="56.82" y1="17.78" x2="56.82" y2="77.46" width="0" layer="20"/>
+<wire x1="56.82" y1="77.46" x2="3.81" y2="77.46" width="0" layer="20"/>
 <wire x1="3.81" y1="77.46" x2="3.81" y2="17.78" width="0" layer="20"/>
 <text x="6.35" y="19.05" size="1.4224" layer="21">SuperAwesomeRobots.com</text>
 <text x="11.43" y="71.12" size="1.4224" layer="21">Ultimate Voice Changer 1.1</text>
