@@ -15,12 +15,9 @@
 #include <MCP3208.h>
 #include <MCP4921.h>
 #include <Sinewave.h>
- 
+
 // comment this out if you don't want the LED working
 #define ENABLE_LED
-
-// comment this out if you don't have a pot attached to the second input
-#define ENABLE_POT
 
 // the code now supports some different effects modes, mostly to help with debugging
 #define MODE_NO_EFFECT 1 // this mode passes the mic input directly to the audio out without modification
@@ -83,10 +80,8 @@ void loop() {
   if (sample_counter == 400) {
     sample_counter = 0;
 
-#ifdef ENABLE_POT
-    int pot = adc.read(2);
+    int pot = adc.read(0);
     incr = 1 + (pot/128);
-#endif
 
   } else {
     // sample audio input from channel 1
@@ -144,4 +139,3 @@ void loop() {
   // write output
   dac.write(audio_out);
 }
-

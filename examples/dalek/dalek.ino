@@ -15,7 +15,7 @@
 #include <MCP3208.h>
 #include <MCP4921.h>
 #include <Sinewave.h>
- 
+
 // comment this out if you don't want the LED working
 #define ENABLE_LED
 
@@ -86,7 +86,7 @@ void loop() {
     sample_counter = 0;
 
 #ifdef ENABLE_POT
-    int pot = adc.read(2);
+    int pot = adc.read(0);
     incr = 1 + (pot/128);
 #endif
 
@@ -146,4 +146,3 @@ void loop() {
   // write output
   dac.write(audio_out);
 }
-
