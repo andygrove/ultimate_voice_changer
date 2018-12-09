@@ -4,11 +4,11 @@
 
 This is the official Arduino library for the Ultimate Voice Changer Arduino Shield, which is an open source hardware project that uses an MCP3208 ADC and an MCP4921 DAC with SPI communications to provide high quality voice sampling and real-time audio manipulation.
 
-## Hardware
+## Shield PCB
 
-Eagle schematics and board layout for an Arduino Uno shield are included in this repository. Boards can be purchased directly from OSH Park:
+Eagle schematics and board layout for an Arduino Uno shield are included in this repository. Boards can also be purchased directly from OSH Park:
 
-<a href="https://oshpark.com/shared_projects/ojPzRnSB"><img src="https://oshpark.com/assets/badge-5b7ec47045b78aef6eb9d83b3bac6b1920de805e9a0c227658eac6e19a045b9c.png" alt="Order from OSH Park"></img></a>
+* [Ultimate Voice Changer PCB @ OSH Park](https://oshpark.com/shared_projects/ojPzRnSB)
 
 ## Component List
 
@@ -17,7 +17,7 @@ Eagle schematics and board layout for an Arduino Uno shield are included in this
 * [Audio Jack](https://www.mouser.com/ProductDetail/502-35RAPC4BHN2)
 * 1K resistor
 * 1.5K resistor
-* 330 resistor
+* 330 ohm resistor
 * 0.1 uF capacitor
 * [10 uF electrolytic capacitor (2mm spacing)](https://www.mouser.com/ProductDetail/667-ECA-1HM100)
 * [LED T1-3/4 (5mm) RED](https://www.mouser.com/ProductDetail/696-SLX-LX5093ID)
@@ -26,7 +26,7 @@ Eagle schematics and board layout for an Arduino Uno shield are included in this
 
 ## Example sketches
 
-Currently, there is a single sketch available for a ring modulator effect.
+See the [examples](examples) directory for Dalek / ring modulator examples that mix voice input with a sine wave for robotic voice effects.
 
 ## Alternatives
 
