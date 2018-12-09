@@ -6,10 +6,15 @@ This is the official Arduino library for the Ultimate Voice Changer Arduino Shie
 
 ## Hardware
 
-Eagle schematics and board layout for an Arduino Uno shield are included in this repository.
+Eagle schematics and board layout for an Arduino Uno shield are included in this repository. Boards can be purchased directly from osh park:
 
-You can also purchase easy-to-assemble kits online from http://ultimatevoicechanger.com
+- [Voice Changer Arduino Shield @ OSH Park](git@github.com:andygrove/ultimate_voice_changer.git)
 
 ## Example sketches
 
 Currently, there is a single sketch available for a ring modulator effect.
+
+## Alternatives
+
+I am no longer actively maintaining this project or providing support and I would suggest looking at the [Adafruit Wave Shield](https://learn.adafruit.com/wave-shield-voice-changer/overview) instead. They even have an example Dalek sketch.
+
