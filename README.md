@@ -6,9 +6,9 @@ This is the official Arduino library for the Ultimate Voice Changer Arduino Shie
 
 ## Hardware
 
-Eagle schematics and board layout for an Arduino Uno shield are included in this repository. Boards can be purchased directly from osh park:
+Eagle schematics and board layout for an Arduino Uno shield are included in this repository. Boards can be purchased directly from OSH Park:
 
-- [Voice Changer Arduino Shield @ OSH Park](git@github.com:andygrove/ultimate_voice_changer.git)
+<a href="https://oshpark.com/shared_projects/ojPzRnSB"><img src="https://oshpark.com/assets/badge-5b7ec47045b78aef6eb9d83b3bac6b1920de805e9a0c227658eac6e19a045b9c.png" alt="Order from OSH Park"></img></a>
 
 ## Example sketches
 
